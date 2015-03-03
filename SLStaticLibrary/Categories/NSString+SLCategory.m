@@ -1,12 +1,12 @@
 //
-//  NSString+SLExpansion.m
+//  NSString+SLCategory.m
 //  SLStaticLibrary
 //
 
-#import "NSString+SLExpansion.h"
+#import "NSString+SLCategory.h"
 
 
-@implementation NSString (SLExpansion)
+@implementation NSString (SLCategory)
 
 + (BOOL)isNullOrEmpty:(NSString *)value {
     // 判断是否为 nil 或长度为0

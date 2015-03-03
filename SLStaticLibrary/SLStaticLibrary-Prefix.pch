@@ -35,7 +35,7 @@
 #define statusBarHeight [UIApplication sharedApplication].statusBarFrame.size.height
 #define applicationWidth [UIScreen mainScreen ].applicationFrame.size.width
 #define applicationHeight [UIScreen mainScreen ].applicationFrame.size.height
-#define navigationBarHeight 44;
+#define navigationBarHeight 44
 #define tabBarHeight 49
 
 /* system version */

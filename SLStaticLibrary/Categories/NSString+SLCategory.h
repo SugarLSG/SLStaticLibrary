@@ -1,12 +1,12 @@
 //
-//  NSString+SLExpansion.h
+//  NSString+SLCategory.h
 //  SLStaticLibrary
 //
 
 #import <Foundation/Foundation.h>
 
 
-@interface NSString (SLExpansion)
+@interface NSString (SLCategory)
 
 /**
  判断是否为 nil 或空字符串
