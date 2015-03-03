@@ -6,10 +6,10 @@
 #import <Foundation/Foundation.h>
 
 
-typedef enum {
+typedef NS_ENUM(NSInteger, PropertyType) {
     PropertyTypeItem,
     PropertyTypeArray
-} PropertyType;
+};
 
 
 @interface SLPropertyCorrespondenceModel : NSObject
