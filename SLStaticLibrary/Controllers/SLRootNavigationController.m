@@ -7,6 +7,7 @@
 
 
 #define slMainScreenHeight [UIScreen mainScreen ].bounds.size.height
+#define slStatusBarHeight [UIApplication sharedApplication].statusBarFrame.size.height
 #define slApplicationWidth [UIScreen mainScreen ].applicationFrame.size.width
 #define slNavigationBarHeight 44
 #define slTabBarHeight 49
@@ -40,15 +41,20 @@
         
         /* 初始化各区域 */
         self.vTitle = [[UIView alloc] initWithFrame:CGRectMake(self->_leftViewWidth, 0, self->_titleViewWidth, slNavigationBarHeight)];
+        self.vTitle.alpha = 1;
         [self.navigationBar addSubview:self.vTitle];
         
         self.vLeft = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self->_leftViewWidth, slNavigationBarHeight)];
+        self.vLeft.alpha = 1;
         [self.navigationBar addSubview:self.vLeft];
         
         self.vRight = [[UIView alloc] initWithFrame:CGRectMake(slApplicationWidth - self->_rightViewWidth, 0, self->_rightViewWidth, slNavigationBarHeight)];
+        self.vRight.alpha = 1;
         [self.navigationBar addSubview:self.vRight];
         
-        self.vFull = [[UIView alloc] initWithFrame:CGRectMake(0, slApplicationWidth, 0, slNavigationBarHeight)];
+        self.vFull = [[UIView alloc] initWithFrame:CGRectMake(0, 0, slApplicationWidth, slNavigationBarHeight)];
+        self.vFull.alpha = 0;
+        self.vFull.hidden = YES;
         [self.navigationBar addSubview:self.vFull];
     }
     return self;
@@ -141,32 +147,75 @@
 
 #pragma mark - Full View
 
-- (void)showFullView {
-    CGContextRef contextRef = UIGraphicsGetCurrentContext();
-    [UIView beginAnimations:@"SLRootNavigationController" context:contextRef];
-    [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-    [UIView setAnimationDuration:0.5f];
+- (void)showFullViewWithAnimatedIn:(SLRootNavigationFullViewDirection)direction completion:(void(^)())completion {
+    if (!self.vFull.alpha) {
+        // 未显示，设置开始位置
+        switch (direction) {
+            case SLRootNavigationFullViewDirectionNone:
+                self.vFull.frame = CGRectMake(0, 0, self.vFull.frame.size.width, self.vFull.frame.size.height);
+                break;
+            case SLRootNavigationFullViewDirectionLeftToRight:
+                self.vFull.frame = CGRectMake(-slApplicationWidth, 0, self.vFull.frame.size.width, self.vFull.frame.size.height);
+                break;
+            case SLRootNavigationFullViewDirectionRightToLeft:
+                self.vFull.frame = CGRectMake(slApplicationWidth, 0, self.vFull.frame.size.width, self.vFull.frame.size.height);
+                break;
+            case SLRootNavigationFullViewDirectionTopToBottom:
+                self.vFull.frame = CGRectMake(0, -(slStatusBarHeight + slNavigationBarHeight), self.vFull.frame.size.width, self.vFull.frame.size.height);
+                break;
+            case SLRootNavigationFullViewDirectionBottomToTop:
+                self.vFull.frame = CGRectMake(0, slNavigationBarHeight, self.vFull.frame.size.width, self.vFull.frame.size.height);
+                break;
+        }
+    }
     
-    self.vTitle.hidden = YES;
-    self.vLeft.hidden = YES;
-    self.vRight.hidden = YES;
-    self.vFull.frame = CGRectMake(self.vFull.frame.origin.x, 0, slApplicationWidth, self.vFull.frame.size.height);
-    
-    [UIView commitAnimations];
+    // 开始动画
+    [UIView animateWithDuration:0.5f animations:^{
+        self.vTitle.alpha = 0;
+        self.vLeft.alpha = 0;
+        self.vRight.alpha = 0;
+        self.vFull.frame = CGRectMake(0, 0, self.vFull.frame.size.width, self.vFull.frame.size.height);
+        self.vFull.alpha = 1;
+        self.vFull.hidden = NO;
+    } completion:^(BOOL finished) {
+        if (completion) {
+            completion();
+        }
+    }];
 }
 
-- (void)hideFullView {
-    CGContextRef contextRef = UIGraphicsGetCurrentContext();
-    [UIView beginAnimations:@"SLRootNavigationController" context:contextRef];
-    [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-    [UIView setAnimationDuration:0.5f];
-    
-    self.vTitle.hidden = NO;
-    self.vLeft.hidden = NO;
-    self.vRight.hidden = NO;
-    self.vFull.frame = CGRectMake(self.vFull.frame.origin.x, slApplicationWidth, 0, self.vFull.frame.size.height);
-    
-    [UIView commitAnimations];
+- (void)hideFullViewWithAnimatedOut:(SLRootNavigationFullViewDirection)direction completion:(void(^)())completion {
+    // 开始动画
+    [UIView animateWithDuration:0.5f animations:^{
+        self.vTitle.alpha = 1;
+        self.vLeft.alpha = 1;
+        self.vRight.alpha = 1;
+        // 设置结束位置
+        switch (direction) {
+            case SLRootNavigationFullViewDirectionNone:
+                self.vFull.frame = CGRectMake(0, 0, self.vFull.frame.size.width, self.vFull.frame.size.height);
+                break;
+            case SLRootNavigationFullViewDirectionLeftToRight:
+                self.vFull.frame = CGRectMake(slApplicationWidth, 0, self.vFull.frame.size.width, self.vFull.frame.size.height);
+                break;
+            case SLRootNavigationFullViewDirectionRightToLeft:
+                self.vFull.frame = CGRectMake(-slApplicationWidth, 0, self.vFull.frame.size.width, self.vFull.frame.size.height);
+                break;
+            case SLRootNavigationFullViewDirectionTopToBottom:
+                self.vFull.frame = CGRectMake(0, slNavigationBarHeight, self.vFull.frame.size.width, self.vFull.frame.size.height);
+                break;
+            case SLRootNavigationFullViewDirectionBottomToTop:
+                self.vFull.frame = CGRectMake(0, -(slStatusBarHeight + slNavigationBarHeight), self.vFull.frame.size.width, self.vFull.frame.size.height);
+                break;
+        }
+        self.vFull.alpha = 0;
+    } completion:^(BOOL finished) {
+        self.vFull.hidden = YES;
+        
+        if (completion) {
+            completion();
+        }
+    }];
 }
 
 - (void)clearFullView {

@@ -11,6 +11,17 @@ typedef NS_ENUM(NSInteger, SLRootNavigationBarType) {
     SLRootNavigationBarTypeRight   // right bar
 };
 
+/**
+ Full View 区域运动方向
+ **/
+typedef NS_ENUM(NSInteger, SLRootNavigationFullViewDirection) {
+    SLRootNavigationFullViewDirectionNone,
+    SLRootNavigationFullViewDirectionLeftToRight,
+    SLRootNavigationFullViewDirectionRightToLeft,
+    SLRootNavigationFullViewDirectionTopToBottom,
+    SLRootNavigationFullViewDirectionBottomToTop
+};
+
 
 @interface SLRootNavigationController : UINavigationController
 
@@ -53,19 +64,19 @@ typedef NS_ENUM(NSInteger, SLRootNavigationBarType) {
 - (void)setBarItems:(SLRootNavigationBarType)navigationBarType buttonList:(NSArray *)btnList;
 
 /**
- 显示全区域
+ 显示 Full View 区域
  **/
-- (void)showFullView;
+- (void)showFullViewWithAnimatedIn:(SLRootNavigationFullViewDirection)direction completion:(void(^)())completion;
 /**
- 隐藏全区域
+ 隐藏 Full View 区域
  **/
-- (void)hideFullView;
+- (void)hideFullViewWithAnimatedOut:(SLRootNavigationFullViewDirection)direction completion:(void(^)())completion;
 /**
- 清除全区域
+ 清除 Full View 区域
  **/
 - (void)clearFullView;
 /**
- 设置全区域视图
+ 设置 Full View 区域视图
  **/
 - (void)setFullView:(UIView *)subview;
 
