@@ -34,6 +34,9 @@
     if (self = [super initWithRootViewController:rootViewController]) {
         self.delegate = self;
         
+        // Bar Item 间距
+        self.barItemMargin = 5;
+        
         // 计算各区域宽度
         self->_titleViewWidth = width;
         self->_leftViewWidth = (slApplicationWidth - width) / 2;
@@ -138,14 +141,29 @@
 - (void)setBarItem:(SLRootNavigationBarType)navigationBarType button:(UIButton *)btn {
     [self clearBarItems:navigationBarType];
     
-    [(navigationBarType == SLRootNavigationBarTypeLeft ? self.vLeft : self.vRight) addSubview:btn];
+    if (navigationBarType == SLRootNavigationBarTypeLeft) {
+        btn.frame = CGRectMake(self.barItemMargin, (slNavigationBarHeight - btn.frame.size.height) / 2, btn.frame.size.width, btn.frame.size.height);
+        [self.vLeft addSubview:btn];
+    } else {
+        btn.frame = CGRectMake(self.rightViewWidth - btn.frame.size.width - self.barItemMargin, (slNavigationBarHeight - btn.frame.size.height) / 2, btn.frame.size.width, btn.frame.size.height);
+        [self.vRight addSubview:btn];
+    }
 }
 
 - (void)setBarItems:(SLRootNavigationBarType)navigationBarType buttonList:(NSArray *)btnList {
     [self clearBarItems:navigationBarType];
     
+    float currentMargin = self.barItemMargin;
     for (UIButton *btn in btnList) {
-        [(navigationBarType == SLRootNavigationBarTypeLeft ? self.vLeft : self.vRight) addSubview:btn];
+        if (navigationBarType == SLRootNavigationBarTypeLeft) {
+            btn.frame = CGRectMake(currentMargin, (slNavigationBarHeight - btn.frame.size.height) / 2, btn.frame.size.width, btn.frame.size.height);
+            [self.vLeft addSubview:btn];
+        } else {
+            btn.frame = CGRectMake(self.rightViewWidth - btn.frame.size.width - currentMargin, (slNavigationBarHeight - btn.frame.size.height) / 2, btn.frame.size.width, btn.frame.size.height);
+            [self.vRight addSubview:btn];
+        }
+        
+        currentMargin += (btn.frame.size.width + self.barItemMargin);
     }
 }
 

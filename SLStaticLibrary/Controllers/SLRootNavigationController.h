@@ -27,8 +27,9 @@ typedef NS_ENUM(NSInteger, SLRootNavigationFullViewDirection) {
 
 @property (nonatomic, assign, readonly) float titleViewWidth;   // 标题区域宽度
 @property (nonatomic, assign, readonly) float leftViewWidth;    // 左边栏区域宽度
-@property (nonatomic, assign, readonly) float rightViewWidth;   // 右边栏区域宽度
-@property (nonatomic, assign) BOOL hideTabBar;                      // 隐藏 TabBar
+@property (nonatomic, assign, readonly) float rightViewWidth;  // 右边栏区域宽度
+@property (nonatomic, assign) float barItemMargin;                   // Bar Item 间距，默认为5
+@property (nonatomic, assign) BOOL hideTabBar;                     // 隐藏 Tab Bar
 
 
 - (instancetype)initWithRootViewController:(UIViewController *)rootViewController titleViewWidth:(float)width;
