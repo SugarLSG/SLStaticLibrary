@@ -78,6 +78,13 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		2A6873971AA6AC630039D966 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		2A7180561AA046AB00252759 = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +107,7 @@
 				2A5C3CAB1AA16F2500AD0A4A /* Categories */,
 				2A6873591AA58BCE0039D966 /* Controllers */,
 				2A5C3CC41AA1B09300AD0A4A /* Models */,
+				2A6873971AA6AC630039D966 /* Views */,
 				2A5C3CF71AA40EBF00AD0A4A /* SLStaticLibrary-Prefix.pch */,
 			);
 			path = SLStaticLibrary;
