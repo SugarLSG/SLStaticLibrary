@@ -13,6 +13,9 @@
 		2A6873911AA598B00039D966 /* NSString+SLCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A6873901AA598B00039D966 /* NSString+SLCategory.m */; };
 		2A6873B31AA6F0830039D966 /* UIImage+SLCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A6873B21AA6F0830039D966 /* UIImage+SLCategory.m */; };
 		2A6873B61AA6F0F40039D966 /* UIColor+SLCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A6873B51AA6F0F40039D966 /* UIColor+SLCategory.m */; };
+		2A6873B91AA6F81B0039D966 /* SLBaseCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A6873B81AA6F81B0039D966 /* SLBaseCellModel.m */; };
+		2A6873BD1AA6F8BD0039D966 /* SLBaseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A6873BB1AA6F8BD0039D966 /* SLBaseCollectionViewCell.m */; };
+		2A6873C01AA6F9440039D966 /* SLBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A6873BF1AA6F9440039D966 /* SLBaseTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -41,6 +44,12 @@
 		2A6873B21AA6F0830039D966 /* UIImage+SLCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SLCategory.m"; sourceTree = "<group>"; };
 		2A6873B41AA6F0F40039D966 /* UIColor+SLCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+SLCategory.h"; sourceTree = "<group>"; };
 		2A6873B51AA6F0F40039D966 /* UIColor+SLCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+SLCategory.m"; sourceTree = "<group>"; };
+		2A6873B71AA6F81B0039D966 /* SLBaseCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLBaseCellModel.h; sourceTree = "<group>"; };
+		2A6873B81AA6F81B0039D966 /* SLBaseCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLBaseCellModel.m; sourceTree = "<group>"; };
+		2A6873BA1AA6F8BD0039D966 /* SLBaseCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLBaseCollectionViewCell.h; sourceTree = "<group>"; };
+		2A6873BB1AA6F8BD0039D966 /* SLBaseCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLBaseCollectionViewCell.m; sourceTree = "<group>"; };
+		2A6873BE1AA6F9440039D966 /* SLBaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLBaseTableViewCell.h; sourceTree = "<group>"; };
+		2A6873BF1AA6F9440039D966 /* SLBaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLBaseTableViewCell.m; sourceTree = "<group>"; };
 		2A71805F1AA046AB00252759 /* libSLStaticLibrary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSLStaticLibrary.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -71,6 +80,8 @@
 		2A5C3CC41AA1B09300AD0A4A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2A6873B71AA6F81B0039D966 /* SLBaseCellModel.h */,
+				2A6873B81AA6F81B0039D966 /* SLBaseCellModel.m */,
 				2A5C3CC51AA1B0DC00AD0A4A /* SLBaseNetworkModel.h */,
 				2A5C3CC61AA1B0DC00AD0A4A /* SLBaseNetworkModel.m */,
 				2A5C3CCB1AA1B1BB00AD0A4A /* SLPropertyCorrespondenceModel.h */,
@@ -91,6 +102,10 @@
 		2A6873971AA6AC630039D966 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2A6873BA1AA6F8BD0039D966 /* SLBaseCollectionViewCell.h */,
+				2A6873BB1AA6F8BD0039D966 /* SLBaseCollectionViewCell.m */,
+				2A6873BE1AA6F9440039D966 /* SLBaseTableViewCell.h */,
+				2A6873BF1AA6F9440039D966 /* SLBaseTableViewCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -182,9 +197,12 @@
 			files = (
 				2A6873B31AA6F0830039D966 /* UIImage+SLCategory.m in Sources */,
 				2A6873911AA598B00039D966 /* NSString+SLCategory.m in Sources */,
+				2A6873C01AA6F9440039D966 /* SLBaseTableViewCell.m in Sources */,
 				2A6873B61AA6F0F40039D966 /* UIColor+SLCategory.m in Sources */,
 				2A5C3CCD1AA1B1BB00AD0A4A /* SLPropertyCorrespondenceModel.m in Sources */,
 				2A6873821AA592760039D966 /* SLRootNavigationController.m in Sources */,
+				2A6873B91AA6F81B0039D966 /* SLBaseCellModel.m in Sources */,
+				2A6873BD1AA6F8BD0039D966 /* SLBaseCollectionViewCell.m in Sources */,
 				2A5C3CC71AA1B0DC00AD0A4A /* SLBaseNetworkModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
