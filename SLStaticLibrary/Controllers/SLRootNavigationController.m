@@ -130,6 +130,11 @@
     }
 }
 
+- (void)clearAllBarItems {
+    [self clearBarItems:SLRootNavigationBarTypeLeft];
+    [self clearBarItems:SLRootNavigationBarTypeRight];
+}
+
 - (void)setBarItem:(SLRootNavigationBarType)navigationBarType button:(UIButton *)btn {
     [self clearBarItems:navigationBarType];
     

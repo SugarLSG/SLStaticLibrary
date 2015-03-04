@@ -51,9 +51,13 @@ typedef NS_ENUM(NSInteger, SLRootNavigationFullViewDirection) {
 - (void)setButtonTitle:(UIButton *)btnTitle;
 
 /**
- 清除所有边栏按钮
+ 清除边栏按钮
  **/
 - (void)clearBarItems:(SLRootNavigationBarType)navigationBarType;
+/**
+ 清除所有边栏按钮
+ **/
+- (void)clearAllBarItems;
 /**
  设置边栏按钮
  **/
