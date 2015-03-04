@@ -11,6 +11,8 @@
 		2A5C3CCD1AA1B1BB00AD0A4A /* SLPropertyCorrespondenceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A5C3CCC1AA1B1BB00AD0A4A /* SLPropertyCorrespondenceModel.m */; };
 		2A6873821AA592760039D966 /* SLRootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A6873811AA592760039D966 /* SLRootNavigationController.m */; };
 		2A6873911AA598B00039D966 /* NSString+SLCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A6873901AA598B00039D966 /* NSString+SLCategory.m */; };
+		2A6873B31AA6F0830039D966 /* UIImage+SLCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A6873B21AA6F0830039D966 /* UIImage+SLCategory.m */; };
+		2A6873B61AA6F0F40039D966 /* UIColor+SLCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A6873B51AA6F0F40039D966 /* UIColor+SLCategory.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -35,6 +37,10 @@
 		2A6873811AA592760039D966 /* SLRootNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRootNavigationController.m; sourceTree = "<group>"; };
 		2A68738F1AA598B00039D966 /* NSString+SLCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SLCategory.h"; sourceTree = "<group>"; };
 		2A6873901AA598B00039D966 /* NSString+SLCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SLCategory.m"; sourceTree = "<group>"; };
+		2A6873B11AA6F0830039D966 /* UIImage+SLCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+SLCategory.h"; sourceTree = "<group>"; };
+		2A6873B21AA6F0830039D966 /* UIImage+SLCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SLCategory.m"; sourceTree = "<group>"; };
+		2A6873B41AA6F0F40039D966 /* UIColor+SLCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+SLCategory.h"; sourceTree = "<group>"; };
+		2A6873B51AA6F0F40039D966 /* UIColor+SLCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+SLCategory.m"; sourceTree = "<group>"; };
 		2A71805F1AA046AB00252759 /* libSLStaticLibrary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSLStaticLibrary.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -54,6 +60,10 @@
 			children = (
 				2A68738F1AA598B00039D966 /* NSString+SLCategory.h */,
 				2A6873901AA598B00039D966 /* NSString+SLCategory.m */,
+				2A6873B41AA6F0F40039D966 /* UIColor+SLCategory.h */,
+				2A6873B51AA6F0F40039D966 /* UIColor+SLCategory.m */,
+				2A6873B11AA6F0830039D966 /* UIImage+SLCategory.h */,
+				2A6873B21AA6F0830039D966 /* UIImage+SLCategory.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -170,7 +180,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A6873B31AA6F0830039D966 /* UIImage+SLCategory.m in Sources */,
 				2A6873911AA598B00039D966 /* NSString+SLCategory.m in Sources */,
+				2A6873B61AA6F0F40039D966 /* UIColor+SLCategory.m in Sources */,
 				2A5C3CCD1AA1B1BB00AD0A4A /* SLPropertyCorrespondenceModel.m in Sources */,
 				2A6873821AA592760039D966 /* SLRootNavigationController.m in Sources */,
 				2A5C3CC71AA1B0DC00AD0A4A /* SLBaseNetworkModel.m in Sources */,
