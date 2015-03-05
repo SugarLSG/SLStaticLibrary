@@ -9,7 +9,7 @@
 @implementation SLBaseCellModel
 
 - (CGSize)getItemSize {
-    // 请在子类中重新该方法
+    // 请在子类中重写该方法
     return CGSizeZero;
 }
 
