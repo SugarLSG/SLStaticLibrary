@@ -1,19 +1,7 @@
 //
-//  SLStaticLibrary-Prefix.pch
+//  SLStaticLibrary.h
 //  SLStaticLibrary
 //
-//  Created by mc.sugar on 15/3/2.
-//
-//
-
-#ifndef SLStaticLibrary_SLStaticLibrary_Prefix_pch
-#define SLStaticLibrary_SLStaticLibrary_Prefix_pch
-
-// Include any system framework and library headers here that should be included in all compilation units.
-// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
-
-#ifdef __OBJC__
-
 
 /* Log */
 #ifdef DEBUG
@@ -44,7 +32,5 @@
 /* the app delegate */
 #define appDelegate ((AppDelegate *)[[UIApplication sharedApplication] delegate])
 
-
-#endif
-
-#endif
+/* app color */
+#define generateColor(r, g, b, a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:a]

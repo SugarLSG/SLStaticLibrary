@@ -3,7 +3,6 @@
 //  SLStaticLibrary
 //
 
-
 #import <UIKit/UIKit.h>
 
 @class SLLabel;
@@ -14,13 +13,9 @@
 @optional
 
 /**
- 点击 Label 时
+ 单击 Label 后
  **/
-- (void)labelBeginTouch:(SLLabel *)label;
-/**
- 点击 Label 后
- **/
-- (void)labelDidTouched:(SLLabel *)label;
+- (void)labelDidClick:(SLLabel *)label;
 
 @end
 

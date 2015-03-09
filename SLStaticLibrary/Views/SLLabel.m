@@ -17,52 +17,55 @@
 
 - (instancetype)init {
     if (self = [super init]) {
-        self.userInteractionEnabled = YES;
+        [self makeInteractiveOperationEnabled];
+        [self addGestureRecognizer];
     }
     return self;
 }
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
-        self.userInteractionEnabled = YES;
+        [self makeInteractiveOperationEnabled];
+        [self addGestureRecognizer];
     }
     return self;
 }
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
-        self.userInteractionEnabled = YES;
+        [self makeInteractiveOperationEnabled];
+        [self addGestureRecognizer];
     }
     return self;
 }
 
-
-#pragma NSObject
-
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    if (self.delegate && [self.delegate respondsToSelector:@selector(labelBeginTouch:)]) {
-        [self.delegate labelBeginTouch:self];
-    }
+/**
+ 设置允许交互操作
+ **/
+- (void)makeInteractiveOperationEnabled {
+    self.userInteractionEnabled = YES;
+    self.multipleTouchEnabled = YES;
 }
 
-- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    // 标示为移动中
-    self.isMoving = YES;
+/**
+ 添加交互手势
+ **/
+- (void)addGestureRecognizer {
+    // 单击
+    UITapGestureRecognizer *singleTapGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTapView:)];
+    singleTapGR.numberOfTapsRequired = 1;
+    [self addGestureRecognizer:singleTapGR];
 }
 
-- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    // 判断是拖曳还是快速点击
-    if (!self.isMoving) {
-        if (self.delegate && [self.delegate respondsToSelector:@selector(labelDidTouched:)]) {
-            [self.delegate labelDidTouched:self];
+
+#pragma 交互
+
+- (void)singleTapView:(UITapGestureRecognizer *)singleTapView {
+    if (singleTapView.state == UIGestureRecognizerStateEnded) {
+        if (self.delegate && [self.delegate respondsToSelector:@selector(labelDidClick:)]) {
+            [self.delegate labelDidClick:self];
         }
     }
-    
-    // 重置是否移动中
-    self.isMoving = NO;
 }
 
 @end

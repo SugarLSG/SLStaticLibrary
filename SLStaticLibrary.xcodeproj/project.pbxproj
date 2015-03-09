@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A5ACE191AAD3DDD00BA7346 /* SLNetworkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A5ACE181AAD3DDD00BA7346 /* SLNetworkHelper.m */; };
 		2A5C3CC71AA1B0DC00AD0A4A /* SLBaseNetworkModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A5C3CC61AA1B0DC00AD0A4A /* SLBaseNetworkModel.m */; };
 		2A5C3CCD1AA1B1BB00AD0A4A /* SLPropertyCorrespondenceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A5C3CCC1AA1B1BB00AD0A4A /* SLPropertyCorrespondenceModel.m */; };
 		2A6873821AA592760039D966 /* SLRootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A6873811AA592760039D966 /* SLRootNavigationController.m */; };
@@ -18,6 +19,8 @@
 		2A6873C01AA6F9440039D966 /* SLBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A6873BF1AA6F9440039D966 /* SLBaseTableViewCell.m */; };
 		2A6873EF1AA85B1D0039D966 /* SLImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A6873EE1AA85B1D0039D966 /* SLImageView.m */; };
 		2A6873F21AA85C6C0039D966 /* SLLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A6873F11AA85C6C0039D966 /* SLLabel.m */; };
+		2A85481F1AA9ACEF00DC8BA5 /* SLPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A85481E1AA9ACEF00DC8BA5 /* SLPhotoView.m */; };
+		92EBA50CDB8F432483412024 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A4A992EBA4509D7D844EB375 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,11 +36,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2A5ACE171AAD3DDD00BA7346 /* SLNetworkHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLNetworkHelper.h; sourceTree = "<group>"; };
+		2A5ACE181AAD3DDD00BA7346 /* SLNetworkHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLNetworkHelper.m; sourceTree = "<group>"; };
 		2A5C3CC51AA1B0DC00AD0A4A /* SLBaseNetworkModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLBaseNetworkModel.h; sourceTree = "<group>"; };
 		2A5C3CC61AA1B0DC00AD0A4A /* SLBaseNetworkModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLBaseNetworkModel.m; sourceTree = "<group>"; };
 		2A5C3CCB1AA1B1BB00AD0A4A /* SLPropertyCorrespondenceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLPropertyCorrespondenceModel.h; sourceTree = "<group>"; };
 		2A5C3CCC1AA1B1BB00AD0A4A /* SLPropertyCorrespondenceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLPropertyCorrespondenceModel.m; sourceTree = "<group>"; };
-		2A5C3CF71AA40EBF00AD0A4A /* SLStaticLibrary-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SLStaticLibrary-Prefix.pch"; sourceTree = "<group>"; };
 		2A6873801AA592760039D966 /* SLRootNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRootNavigationController.h; sourceTree = "<group>"; };
 		2A6873811AA592760039D966 /* SLRootNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRootNavigationController.m; sourceTree = "<group>"; };
 		2A68738F1AA598B00039D966 /* NSString+SLCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SLCategory.h"; sourceTree = "<group>"; };
@@ -57,6 +61,12 @@
 		2A6873F01AA85C6C0039D966 /* SLLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLLabel.h; sourceTree = "<group>"; };
 		2A6873F11AA85C6C0039D966 /* SLLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLLabel.m; sourceTree = "<group>"; };
 		2A71805F1AA046AB00252759 /* libSLStaticLibrary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSLStaticLibrary.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A85481D1AA9ACEF00DC8BA5 /* SLPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLPhotoView.h; sourceTree = "<group>"; };
+		2A85481E1AA9ACEF00DC8BA5 /* SLPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLPhotoView.m; sourceTree = "<group>"; };
+		2A8548201AA9AEB400DC8BA5 /* SLStaticLibrary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLStaticLibrary.h; sourceTree = "<group>"; };
+		A1558590F58649D77795E11B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		A4A992EBA4509D7D844EB375 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCA0654B2B63B9B861441A08 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,12 +74,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92EBA50CDB8F432483412024 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0CE30ABA91BBE90DACE5430A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BCA0654B2B63B9B861441A08 /* Pods.debug.xcconfig */,
+				A1558590F58649D77795E11B /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		2A5ACE161AAD3DAF00BA7346 /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				2A5ACE171AAD3DDD00BA7346 /* SLNetworkHelper.h */,
+				2A5ACE181AAD3DDD00BA7346 /* SLNetworkHelper.m */,
+			);
+			path = Commons;
+			sourceTree = "<group>";
+		};
 		2A5C3CAB1AA16F2500AD0A4A /* Categories */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +145,8 @@
 				2A6873EE1AA85B1D0039D966 /* SLImageView.m */,
 				2A6873F01AA85C6C0039D966 /* SLLabel.h */,
 				2A6873F11AA85C6C0039D966 /* SLLabel.m */,
+				2A85481D1AA9ACEF00DC8BA5 /* SLPhotoView.h */,
+				2A85481E1AA9ACEF00DC8BA5 /* SLPhotoView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -125,6 +156,8 @@
 			children = (
 				2A7180611AA046AB00252759 /* SLStaticLibrary */,
 				2A7180601AA046AB00252759 /* Products */,
+				0CE30ABA91BBE90DACE5430A /* Pods */,
+				BCF9F4E561562FC3910708D8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -140,12 +173,21 @@
 			isa = PBXGroup;
 			children = (
 				2A5C3CAB1AA16F2500AD0A4A /* Categories */,
+				2A5ACE161AAD3DAF00BA7346 /* Commons */,
 				2A6873591AA58BCE0039D966 /* Controllers */,
 				2A5C3CC41AA1B09300AD0A4A /* Models */,
+				2A8548201AA9AEB400DC8BA5 /* SLStaticLibrary.h */,
 				2A6873971AA6AC630039D966 /* Views */,
-				2A5C3CF71AA40EBF00AD0A4A /* SLStaticLibrary-Prefix.pch */,
 			);
 			path = SLStaticLibrary;
+			sourceTree = "<group>";
+		};
+		BCF9F4E561562FC3910708D8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A4A992EBA4509D7D844EB375 /* libPods.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,9 +197,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2A7180731AA046AB00252759 /* Build configuration list for PBXNativeTarget "SLStaticLibrary" */;
 			buildPhases = (
+				46592FA3809C266ADA1DD466 /* Check Pods Manifest.lock */,
 				2A71805B1AA046AB00252759 /* Sources */,
 				2A71805C1AA046AB00252759 /* Frameworks */,
 				2A71805D1AA046AB00252759 /* CopyFiles */,
+				1D23F0D043462AB701A6617C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -200,11 +244,45 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1D23F0D043462AB701A6617C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		46592FA3809C266ADA1DD466 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2A71805B1AA046AB00252759 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A85481F1AA9ACEF00DC8BA5 /* SLPhotoView.m in Sources */,
 				2A6873B31AA6F0830039D966 /* UIImage+SLCategory.m in Sources */,
 				2A6873911AA598B00039D966 /* NSString+SLCategory.m in Sources */,
 				2A6873C01AA6F9440039D966 /* SLBaseTableViewCell.m in Sources */,
@@ -215,6 +293,7 @@
 				2A6873BD1AA6F8BD0039D966 /* SLBaseCollectionViewCell.m in Sources */,
 				2A6873EF1AA85B1D0039D966 /* SLImageView.m in Sources */,
 				2A5C3CC71AA1B0DC00AD0A4A /* SLBaseNetworkModel.m in Sources */,
+				2A5ACE191AAD3DDD00BA7346 /* SLNetworkHelper.m in Sources */,
 				2A6873F21AA85C6C0039D966 /* SLLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -298,6 +377,7 @@
 		};
 		2A7180741AA046AB00252759 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BCA0654B2B63B9B861441A08 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_LDFLAGS = "-ObjC";
@@ -308,6 +388,7 @@
 		};
 		2A7180751AA046AB00252759 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A1558590F58649D77795E11B /* Pods.release.xcconfig */;
 			buildSettings = {
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_LDFLAGS = "-ObjC";

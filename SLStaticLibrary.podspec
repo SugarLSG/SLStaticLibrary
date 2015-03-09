@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name     = 'SLStaticLibrary'
-  s.version  = '1.0.7'
+  s.version  = '1.0.8'
   s.license  = 'MIT'
   s.summary  = 'my custom static library for iOS.'
   s.homepage = 'https://github.com/SugarLSG/SLStaticLibrary'
@@ -10,10 +10,17 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '7.0'
 
-#  s.source_files = 'SLStaticLibrary/*.{h,m}'
+  s.dependency 'SDWebImage'
+
+  s.public_header_files = 'SLStaticLibrary/SLStaticLibrary.h'
+#  s.source_files = 'SLStaticLibrary/*.{h,m}’
 
   s.subspec 'Categories' do |ss|
     ss.source_files = 'SLStaticLibrary/Categories/*.{h,m}'
+  end
+
+  s.subspec 'Commons' do |ss|
+    ss.source_files = 'SLStaticLibrary/Commons/*.{h,m}'
   end
 
   s.subspec 'Controllers' do |ss|

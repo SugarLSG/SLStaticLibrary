@@ -13,13 +13,21 @@
 @optional
 
 /**
- 点击图片时
+ 单击图片后
  **/
-- (void)imageViewBeginTouch:(SLImageView *)imageView;
+- (void)imageViewDidClick:(SLImageView *)imageView;
 /**
- 点击图片后
+ 双击图片后
  **/
-- (void)imageViewDidTouched:(SLImageView *)imageView;
+- (void)imageViewDidDoubleClick:(SLImageView *)imageView;
+/**
+ 缩放图片后
+ **/
+- (void)imageViewDidZoomed:(SLImageView *)imageView state:(UIGestureRecognizerState)state scale:(CGFloat)scale;
+/**
+ 移动图片后
+ **/
+- (void)imageViewDidMove:(SLImageView *)imageView state:(UIGestureRecognizerState)state translation:(CGPoint)translation;
 
 @end
 
