@@ -10,28 +10,34 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '7.0'
 
-  s.dependency 'SDWebImage'
-
-  s.public_header_files = 'SLStaticLibrary/SLStaticLibrary.h'
-#  s.source_files = 'SLStaticLibrary/*.{h,m}’
+  #s.public_header_files = 'SLStaticLibrary/*.h'
+  #s.source_files = 'SLStaticLibrary/*.{h,m}'
 
   s.subspec 'Categories' do |ss|
-    ss.source_files = 'SLStaticLibrary/Categories/*.{h,m}'
+    ss.source_files = 'SLStaticLibrary/Categories/**/*'
+    ss.public_header_files = 'SLStaticLibrary/Categories/**/*.h'
   end
 
   s.subspec 'Commons' do |ss|
-    ss.source_files = 'SLStaticLibrary/Commons/*.{h,m}'
+    ss.source_files = 'SLStaticLibrary/Commons/**/*'
+    ss.public_header_files = 'SLStaticLibrary/Commons/**/*.h'
+    ss.dependency 'SDWebImage', '~> 3.7.1'
   end
 
   s.subspec 'Controllers' do |ss|
-    ss.source_files = 'SLStaticLibrary/Controllers/*.{h,m}'
+    ss.source_files = 'SLStaticLibrary/Controllers/**/*'
+    ss.public_header_files = 'SLStaticLibrary/Controllers/**/*.h'
+    ss.dependency 'SLStaticLibrary/Commons'
   end
 
   s.subspec 'Models' do |ss|
-    ss.source_files = 'SLStaticLibrary/Models/*.{h,m}'
+    ss.source_files = 'SLStaticLibrary/Models/**/*'
+    ss.public_header_files = 'SLStaticLibrary/Models/**/*.h'
   end
 
   s.subspec 'Views' do |ss|
-    ss.source_files = 'SLStaticLibrary/Views/*.{h,m}'
+    ss.source_files = 'SLStaticLibrary/Views/**/*'
+    ss.public_header_files = 'SLStaticLibrary/Views/**/*.h'
+    ss.dependency 'SLStaticLibrary/Commons'
   end
 end
