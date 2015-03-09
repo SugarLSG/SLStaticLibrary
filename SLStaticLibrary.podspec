@@ -21,7 +21,8 @@ Pod::Spec.new do |s|
   s.subspec 'Commons' do |ss|
     ss.source_files = 'SLStaticLibrary/Commons/**/*'
     ss.public_header_files = 'SLStaticLibrary/Commons/**/*.h'
-    ss.dependency 'SDWebImage', '~> 3.7.1'
+    ss.dependency 'AFNetworking'
+    ss.dependency 'SDWebImage'
   end
 
   s.subspec 'Controllers' do |ss|

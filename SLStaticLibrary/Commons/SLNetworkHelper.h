@@ -5,9 +5,26 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "AFHTTPRequestOperationManager.h"
 
 
 @interface SLNetworkHelper : NSObject
+
+/**
+ 监控网络
+ **/
++ (void)monitorNetworkWithChangeBlock:(void (^)(AFNetworkReachabilityStatus status))changeBlock;
+
+/**
+ Get 请求
+ **/
++ (void)getRequestWithUrl:(NSString *)url parameters:(id)parameters success:(void (^)(id responseData))successBlock failure:(void (^)())failureBlock;
+
+/**
+ Post 请求
+ **/
++ (void)postRequestWithUrl:(NSString *)url parameters:(id)parameters success:(void (^)(id responseData))successBlock failure:(void (^)())failureBlock;
+
 
 /**
  获取图片缓存大小（bytes）
