@@ -214,7 +214,7 @@
     [self scalePhotoTransform:newScale];
 }
 
-- (void)imageViewDidZoomed:(SLImageView *)imageView state:(UIGestureRecognizerState)state scale:(CGFloat)scale {
+- (void)imageViewDidZoom:(SLImageView *)imageView state:(UIGestureRecognizerState)state scale:(CGFloat)scale {
     if (state == UIGestureRecognizerStateBegan) {
         self.fIvPhotoLastScale = scale;
     } else if (state == UIGestureRecognizerStateEnded) {

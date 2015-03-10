@@ -88,6 +88,15 @@
 }
 
 
+- (void)setImageViewInteractiveType:(SLImageViewInteractiveType)imageViewInteractiveType {
+    NSLog(@"SLImageViewInteractiveTypeNone %i", imageViewInteractiveType == SLImageViewInteractiveTypeNone);
+    NSLog(@"SLImageViewInteractiveTypeClick %i", imageViewInteractiveType == SLImageViewInteractiveTypeClick);
+    NSLog(@"SLImageViewInteractiveTypeDoubleClick %i", imageViewInteractiveType == SLImageViewInteractiveTypeDoubleClick);
+    NSLog(@"SLImageViewInteractiveTypeZoom %i", imageViewInteractiveType == SLImageViewInteractiveTypeZoom);
+    NSLog(@"SLImageViewInteractiveTypeMove %i", imageViewInteractiveType == SLImageViewInteractiveTypeMove);
+}
+
+
 #pragma 交互
 
 - (void)singleTapView:(UITapGestureRecognizer *)singleTapView {
@@ -107,8 +116,8 @@
 }
 
 - (void)pinchView:(UIPinchGestureRecognizer *)pinchGR {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(imageViewDidZoomed:state:scale:)]) {
-        [self.delegate imageViewDidZoomed:self state:pinchGR.state scale:pinchGR.scale];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(imageViewDidZoom:state:scale:)]) {
+        [self.delegate imageViewDidZoom:self state:pinchGR.state scale:pinchGR.scale];
     }
 }
 

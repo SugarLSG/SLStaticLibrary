@@ -8,6 +8,15 @@
 @class SLImageView;
 
 
+typedef NS_ENUM(NSInteger, SLImageViewInteractiveType) {
+    SLImageViewInteractiveTypeNone = 0,
+    SLImageViewInteractiveTypeClick = 1 << 0,
+    SLImageViewInteractiveTypeDoubleClick = 1 << 1,
+    SLImageViewInteractiveTypeZoom = 1 << 2,
+    SLImageViewInteractiveTypeMove = 1 << 3
+};
+
+
 @protocol SLImageViewDelegate <NSObject>
 
 @optional
@@ -23,7 +32,7 @@
 /**
  缩放图片后
  **/
-- (void)imageViewDidZoomed:(SLImageView *)imageView state:(UIGestureRecognizerState)state scale:(CGFloat)scale;
+- (void)imageViewDidZoom:(SLImageView *)imageView state:(UIGestureRecognizerState)state scale:(CGFloat)scale;
 /**
  移动图片后
  **/
@@ -35,6 +44,7 @@
 @interface SLImageView : UIImageView
 
 @property (nonatomic, strong) id parameter;
+@property (nonatomic, assign) SLImageViewInteractiveType imageViewInteractiveType;
 @property (nonatomic, weak) id<SLImageViewDelegate> delegate;
 
 @end
