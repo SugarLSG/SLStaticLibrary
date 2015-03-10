@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name     = 'SLStaticLibrary'
-  s.version  = '1.0.8'
+  s.version  = '1.0.9'
   s.license  = 'MIT'
   s.summary  = 'my custom static library for iOS.'
   s.homepage = 'https://github.com/SugarLSG/SLStaticLibrary'
