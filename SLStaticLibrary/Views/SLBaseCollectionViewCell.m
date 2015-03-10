@@ -21,7 +21,7 @@
     // 请在子类中重写该方法
 }
 
-- (void)reloadCellViewWithModel:(SLBaseCellModel *)model {
+- (void)reloadCellViewWithModel:(SLBaseCellModel *)cellModel {
     // 请在子类中重写该方法
 }
 

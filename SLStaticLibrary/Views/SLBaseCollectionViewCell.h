@@ -18,6 +18,6 @@
 /**
  根据 Model 重新渲染 Cell View
  **/
-- (void)reloadCellViewWithModel:(SLBaseCellModel *)model;
+- (void)reloadCellViewWithModel:(SLBaseCellModel *)cellModel;
 
 @end

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2A5ACE191AAD3DDD00BA7346 /* SLNetworkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A5ACE181AAD3DDD00BA7346 /* SLNetworkHelper.m */; };
+		2A5ACE541AAEB4A900BA7346 /* UIView+SLCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A5ACE531AAEB4A900BA7346 /* UIView+SLCategory.m */; };
 		2A5C3CC71AA1B0DC00AD0A4A /* SLBaseNetworkModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A5C3CC61AA1B0DC00AD0A4A /* SLBaseNetworkModel.m */; };
 		2A5C3CCD1AA1B1BB00AD0A4A /* SLPropertyCorrespondenceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A5C3CCC1AA1B1BB00AD0A4A /* SLPropertyCorrespondenceModel.m */; };
 		2A6873821AA592760039D966 /* SLRootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A6873811AA592760039D966 /* SLRootNavigationController.m */; };
@@ -40,6 +41,8 @@
 		2A5ACE181AAD3DDD00BA7346 /* SLNetworkHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLNetworkHelper.m; sourceTree = "<group>"; };
 		2A5ACE1E1AAD6A1D00BA7346 /* SLStaticLibrary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLStaticLibrary.h; sourceTree = "<group>"; };
 		2A5ACE1F1AAD879700BA7346 /* SLStaticLibrary.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLStaticLibrary.pch; sourceTree = "<group>"; };
+		2A5ACE521AAEB4A900BA7346 /* UIView+SLCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SLCategory.h"; sourceTree = "<group>"; };
+		2A5ACE531AAEB4A900BA7346 /* UIView+SLCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SLCategory.m"; sourceTree = "<group>"; };
 		2A5C3CC51AA1B0DC00AD0A4A /* SLBaseNetworkModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLBaseNetworkModel.h; sourceTree = "<group>"; };
 		2A5C3CC61AA1B0DC00AD0A4A /* SLBaseNetworkModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLBaseNetworkModel.m; sourceTree = "<group>"; };
 		2A5C3CCB1AA1B1BB00AD0A4A /* SLPropertyCorrespondenceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLPropertyCorrespondenceModel.h; sourceTree = "<group>"; };
@@ -110,6 +113,8 @@
 				2A6873B51AA6F0F40039D966 /* UIColor+SLCategory.m */,
 				2A6873B11AA6F0830039D966 /* UIImage+SLCategory.h */,
 				2A6873B21AA6F0830039D966 /* UIImage+SLCategory.m */,
+				2A5ACE521AAEB4A900BA7346 /* UIView+SLCategory.h */,
+				2A5ACE531AAEB4A900BA7346 /* UIView+SLCategory.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -293,6 +298,7 @@
 				2A6873821AA592760039D966 /* SLRootNavigationController.m in Sources */,
 				2A6873B91AA6F81B0039D966 /* SLBaseCellModel.m in Sources */,
 				2A6873BD1AA6F8BD0039D966 /* SLBaseCollectionViewCell.m in Sources */,
+				2A5ACE541AAEB4A900BA7346 /* UIView+SLCategory.m in Sources */,
 				2A6873EF1AA85B1D0039D966 /* SLImageView.m in Sources */,
 				2A5C3CC71AA1B0DC00AD0A4A /* SLBaseNetworkModel.m in Sources */,
 				2A5ACE191AAD3DDD00BA7346 /* SLNetworkHelper.m in Sources */,
