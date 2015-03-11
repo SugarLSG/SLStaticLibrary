@@ -8,15 +8,15 @@
 
 /* log */
 #ifdef DEBUG
-#define DebugLog(format, ...) NSLog(@"<%@ - line:%d> %@", [[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__, [NSString stringWithFormat:(format), ##__VA_ARGS__])
-#define DebugLogPoint(point) DebugLog(@"x: %f; y: %f;", (point).x, (point).y)
-#define DebugLogSize(size) DebugLog(@"w: %f; h: %f;", (size).width, (size).height)
-#define DebugLogFrame(frame) DebugLog(@"x: %f; y: %f; w: %f; h: %f;", (frame).origin.x, (frame).origin.y, (frame).size.width, (frame).size.height)
+    #define DebugLog(format, ...) NSLog(@"<%@ - line:%d> %@", [[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__, [NSString stringWithFormat:(format), ##__VA_ARGS__])
+    #define DebugLogPoint(point) DebugLog(@"x: %f; y: %f;", (point).x, (point).y)
+    #define DebugLogSize(size) DebugLog(@"w: %f; h: %f;", (size).width, (size).height)
+    #define DebugLogFrame(frame) DebugLog(@"x: %f; y: %f; w: %f; h: %f;", (frame).origin.x, (frame).origin.y, (frame).size.width, (frame).size.height)
 #else
-#define DebugLog(format, ...)
-#define DebugLogPoint(point)
-#define DebugLogSize(size)
-#define DebugLogFrame(frame)
+    #define DebugLog(format, ...)
+    #define DebugLogPoint(point)
+    #define DebugLogSize(size)
+    #define DebugLogFrame(frame)
 #endif
 
 /* size */
