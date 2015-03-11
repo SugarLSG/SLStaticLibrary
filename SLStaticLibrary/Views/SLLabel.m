@@ -58,7 +58,7 @@
 }
 
 
-#pragma 交互
+#pragma mark - 交互
 
 - (void)singleTapView:(UITapGestureRecognizer *)singleTapView {
     if (singleTapView.state == UIGestureRecognizerStateEnded) {

@@ -57,7 +57,7 @@
 }
 
 
-#pragma 交互
+#pragma mark - 交互
 
 /**
  设置交互手势
