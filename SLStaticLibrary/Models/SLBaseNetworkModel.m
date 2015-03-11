@@ -35,11 +35,11 @@
                 // 是否在子类中有进行转换设置
                 SLPropertyCorrespondenceModel *correspondence = self.propertyCorrespondences && [self.propertyCorrespondences.allKeys containsObject:propertyName] ?
                 self.propertyCorrespondences[propertyName]:
-                [SLPropertyCorrespondenceModel correspondenceWithKey:propertyName propertyType:PropertyTypeItem];
+                [SLPropertyCorrespondenceModel correspondenceWithKey:propertyName propertyType:SLPropertyTypeItem];
                 
                 // 转换值
                 switch (correspondence.propertyType) {
-                    case PropertyTypeItem: {
+                    case SLPropertyTypeItem: {
                         // Item 类型，根据属性的类型，判断是否转换后赋值
                         id data = [jsonModel objectForKey:correspondence.key];
                         
@@ -59,7 +59,7 @@
                         break;
                     }
                         
-                    case PropertyTypeArray: {
+                    case SLPropertyTypeArray: {
                         // 数组类型，根据设置的类型，判断是否转换后赋值
                         NSArray *array = (NSArray *)[jsonModel objectForKey:correspondence.key];
                         
