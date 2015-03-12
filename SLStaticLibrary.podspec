@@ -13,9 +13,8 @@ Pod::Spec.new do |s|
   #s.public_header_files = 'SLStaticLibrary/*.h'
   #s.source_files = 'SLStaticLibrary/*.{h,m}'
 
-  s.subspec 'Bundles' do |ss|
-    ss.source_files = 'SLStaticLibrary/Bundles/**/*'
-    ss.public_header_files = 'SLStaticLibrary/Bundles/**/*.h'
+  s.subspec ‘Resources’ do |ss|
+    ss.source_files = 'SLStaticLibrary/Resources/**/*'
   end
 
   s.subspec 'Categories' do |ss|

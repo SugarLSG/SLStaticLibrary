@@ -65,7 +65,7 @@
 		2A71805F1AA046AB00252759 /* libSLStaticLibrary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSLStaticLibrary.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A85481D1AA9ACEF00DC8BA5 /* SLPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLPhotoView.h; sourceTree = "<group>"; };
 		2A85481E1AA9ACEF00DC8BA5 /* SLPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLPhotoView.m; sourceTree = "<group>"; };
-		2AAA654E1AB16DB70010B10A /* img.leftarrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img.leftarrow.png; sourceTree = "<group>"; };
+		2AAA65511AB171EE0010B10A /* Images.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Images.bundle; sourceTree = "<group>"; };
 		A1558590F58649D77795E11B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A4A992EBA4509D7D844EB375 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCA0654B2B63B9B861441A08 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -175,23 +175,23 @@
 		2A7180611AA046AB00252759 /* SLStaticLibrary */ = {
 			isa = PBXGroup;
 			children = (
-				2AAA654D1AB16DB70010B10A /* Bundles */,
 				2A5C3CAB1AA16F2500AD0A4A /* Categories */,
 				2A5ACE161AAD3DAF00BA7346 /* Commons */,
 				2A6873591AA58BCE0039D966 /* Controllers */,
 				2A5C3CC41AA1B09300AD0A4A /* Models */,
+				2AAA65501AB171EE0010B10A /* Resources */,
 				2A5ACE1F1AAD879700BA7346 /* SLStaticLibrary.pch */,
 				2A6873971AA6AC630039D966 /* Views */,
 			);
 			path = SLStaticLibrary;
 			sourceTree = "<group>";
 		};
-		2AAA654D1AB16DB70010B10A /* Bundles */ = {
+		2AAA65501AB171EE0010B10A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				2AAA654E1AB16DB70010B10A /* img.leftarrow.png */,
+				2AAA65511AB171EE0010B10A /* Images.bundle */,
 			);
-			path = Bundles;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		BCF9F4E561562FC3910708D8 /* Frameworks */ = {
