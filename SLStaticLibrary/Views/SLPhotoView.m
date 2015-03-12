@@ -75,7 +75,8 @@
     self.btnPrev.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5f];
     self.btnPrev.layer.cornerRadius = self.btnPrev.frame.size.width / 2;
     self.btnPrev.hidden = YES;
-    [self.btnPrev setTitle:@"<" forState:UIControlStateNormal];
+    [self.btnPrev setImage:[UIImage imageNamed:@"img.leftarrow"] forState:UIControlStateNormal];
+    self.btnPrev.imageEdgeInsets = UIEdgeInsetsMake(12, 15, 12, 15);
     [self.btnPrev addTarget:self action:@selector(btnPrevClick:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:self.btnPrev];
     
@@ -85,7 +86,9 @@
     self.btnNext.backgroundColor = self.btnPrev.backgroundColor;
     self.btnNext.layer.cornerRadius = self.btnNext.frame.size.width / 2;
     self.btnNext.hidden = YES;
-    [self.btnNext setTitle:@">" forState:UIControlStateNormal];
+    [self.btnNext setImage:[UIImage imageNamed:@"img.leftarrow"] forState:UIControlStateNormal];
+    self.btnNext.imageEdgeInsets = UIEdgeInsetsMake(12, 15, 12, 15);
+    self.btnNext.transform = CGAffineTransformMakeRotation(M_PI);
     [self.btnNext addTarget:self action:@selector(btnNextClick:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:self.btnNext];
 }
