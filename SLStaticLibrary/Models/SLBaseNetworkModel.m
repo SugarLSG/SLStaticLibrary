@@ -25,7 +25,7 @@
         // 转换为对应 Model
         if (jsonModel) {
             // 获取该类所有属性
-            unsigned int count = 0;
+            uint count = 0;
             objc_property_t *properties = class_copyPropertyList([self class], &count);
             
             // 解析

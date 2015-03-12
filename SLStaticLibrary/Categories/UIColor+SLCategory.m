@@ -23,7 +23,7 @@
                     ];
     }
     
-    unsigned int baseValue;
+    uint baseValue;
     [[NSScanner scannerWithString:hexValue] scanHexInt:&baseValue];
     
     CGFloat red = ((baseValue >> 16) & 0xFF) / 255.f;
