@@ -128,9 +128,9 @@
         self.ivPhoto.image = img;
     }
     if (self.ivPhoto.image) {
-        float contentWidth = applicationHeight - navigationBarHeight;
-        float widthScale = applicationWidth / self.ivPhoto.image.size.width;
-        float heightScale = contentWidth / self.ivPhoto.image.size.height;
+        CGFloat contentWidth = applicationHeight - navigationBarHeight;
+        CGFloat widthScale = applicationWidth / self.ivPhoto.image.size.width;
+        CGFloat heightScale = contentWidth / self.ivPhoto.image.size.height;
         // 最小尺寸为最小适配屏幕大小 或 原始尺寸中，小的那个
         self.sIvPhotoMinSize = CGSizeMake(MIN(self.ivPhoto.image.size.width,  self.ivPhoto.image.size.width * MIN(widthScale, heightScale)), MIN(self.ivPhoto.image.size.height,  self.ivPhoto.image.size.height * MIN(widthScale, heightScale)));
         // 最大尺寸为最大适配屏幕2倍大小 或 原始尺寸中，大的那个
@@ -163,11 +163,11 @@
 #pragma mark - SLImageViewDelegate
 
 - (void)scalePhotoTransform:(CGFloat)scale {
-    float contentWidth = applicationHeight - navigationBarHeight;
-    float halfWidth = self.ivPhoto.frame.size.width * scale / 2;
-    float halfGeight = self.ivPhoto.frame.size.height * scale / 2;
-    float marginX = MAX(0, (applicationWidth - self.ivPhoto.frame.size.width * scale) / 2);
-    float marginY = MAX(0, (contentWidth - self.ivPhoto.frame.size.height * scale) / 2);
+    CGFloat contentWidth = applicationHeight - navigationBarHeight;
+    CGFloat halfWidth = self.ivPhoto.frame.size.width * scale / 2;
+    CGFloat halfGeight = self.ivPhoto.frame.size.height * scale / 2;
+    CGFloat marginX = MAX(0, (applicationWidth - self.ivPhoto.frame.size.width * scale) / 2);
+    CGFloat marginY = MAX(0, (contentWidth - self.ivPhoto.frame.size.height * scale) / 2);
     CGPoint newCenter = self.ivPhoto.center;
     BOOL isChange = NO;
     // 太偏左
@@ -242,7 +242,7 @@
         [self  scalePhotoTransform:1];
     } else if (state == UIGestureRecognizerStateChanged) {
         // 放大后的位移距离，应与放大倍数相对应
-        float multiple = self.ivPhoto.frame.size.width / self.sIvPhotoMinSize.width;
+        CGFloat multiple = self.ivPhoto.frame.size.width / self.sIvPhotoMinSize.width;
         self.ivPhoto.center = CGPointMake(self.ivPhoto.center.x + (translation.x - self.pIvPhotoLastTranslation.x) * multiple, self.ivPhoto.center.y + (translation.y - self.pIvPhotoLastTranslation.y) * multiple);
         self.pIvPhotoLastTranslation = translation;
     }

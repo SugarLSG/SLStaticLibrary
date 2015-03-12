@@ -20,11 +20,11 @@
 
 - (instancetype)initWithRootViewController:(UIViewController *)rootViewController {
     // 左右边栏各 1/3 屏幕宽度
-    float viewWidth = applicationWidth / 3;
+    CGFloat viewWidth = applicationWidth / 3;
     return [self initWithRootViewController:rootViewController titleViewWidth:applicationWidth - viewWidth * 2];
 }
 
-- (instancetype)initWithRootViewController:(UIViewController *)rootViewController titleViewWidth:(float)width {
+- (instancetype)initWithRootViewController:(UIViewController *)rootViewController titleViewWidth:(CGFloat)width {
     if (self = [super initWithRootViewController:rootViewController]) {
         self.delegate = self;
         
@@ -147,7 +147,7 @@
 - (void)setBarItems:(SLRootNavigationBarType)navigationBarType buttonList:(NSArray *)btnList {
     [self clearBarItems:navigationBarType];
     
-    float currentMargin = self.barItemMargin;
+    CGFloat currentMargin = self.barItemMargin;
     for (UIButton *btn in btnList) {
         if (navigationBarType == SLRootNavigationBarTypeLeft) {
             btn.frame = CGRectMake(currentMargin, (navigationBarHeight - btn.frame.size.height) / 2, btn.frame.size.width, btn.frame.size.height);

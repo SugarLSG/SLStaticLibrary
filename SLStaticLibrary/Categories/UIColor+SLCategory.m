@@ -26,9 +26,9 @@
     unsigned int baseValue;
     [[NSScanner scannerWithString:hexValue] scanHexInt:&baseValue];
     
-    float red = ((baseValue >> 16) & 0xFF) / 255.f;
-    float green = ((baseValue >> 8) & 0xFF) / 255.f;
-    float blue = ((baseValue >> 0) & 0xFF) / 255.f;
+    CGFloat red = ((baseValue >> 16) & 0xFF) / 255.f;
+    CGFloat green = ((baseValue >> 8) & 0xFF) / 255.f;
+    CGFloat blue = ((baseValue >> 0) & 0xFF) / 255.f;
     
     return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
 }
