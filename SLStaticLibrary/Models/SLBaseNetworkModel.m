@@ -10,6 +10,7 @@
 
 @interface SLBaseNetworkModel ()
 
+@property (nonatomic, strong) NSArray *ignoreProperties;
 @property (nonatomic, strong) NSDictionary *propertyCorrespondences;
 
 @end
@@ -31,6 +32,11 @@
             for (int i = 0; i < count; ++i) {
                 // 获取属性名
                 NSString *propertyName = [NSString stringWithUTF8String:property_getName(properties[i])];
+                
+                // 是否忽略序列化该属性
+                if (self.ignoreProperties && [self.ignoreProperties containsObject:propertyName]) {
+                    continue;
+                }
                 
                 // 是否在子类中有进行转换设置
                 SLPropertyCorrespondenceModel *correspondence = self.propertyCorrespondences && [self.propertyCorrespondences.allKeys containsObject:propertyName] ?
