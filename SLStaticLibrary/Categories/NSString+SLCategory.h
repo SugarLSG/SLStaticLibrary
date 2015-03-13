@@ -4,6 +4,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 
 @interface NSString (SLCategory)
@@ -22,5 +23,11 @@
  删除前后所有空格字符
  **/
 - (instancetype)trim;
+
+
+/**
+ 
+ **/
+- (CGFloat)heightForFont:(UIFont *)font andWidth:(float)width;
 
 @end

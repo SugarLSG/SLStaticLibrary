@@ -23,8 +23,16 @@
     return [[value stringByReplacingOccurrencesOfString:@" " withString:@""] length] == 0;
 }
 
+
 - (instancetype)trim {
     return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+}
+
+- (CGFloat)heightForFont:(UIFont *)font andWidth:(float)width {
+    NSDictionary *attributes = @{ NSFontAttributeName: font };
+    CGRect sizeToFit = [self boundingRectWithSize:CGSizeMake(width, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:nil];
+    
+    return sizeToFit.size.height;
 }
 
 @end
