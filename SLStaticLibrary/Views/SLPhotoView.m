@@ -148,17 +148,17 @@
         [self.delegate photoView:self didShowPhotoIndex:self.imgIndex totalCount:self.imgUrls ? self.imgUrls.count : 0];
     }
     
-    if (!self.imgUrls) {
-        [self setImageViewFrame:self.imgBroken];
-        self.btnPrev.hidden = YES;
-        self.btnNext.hidden = YES;
-    } else {
+    if (self.imgUrls && self.imgUrls.count) {
         [SLNetworkHelper getImageWithUrl:self.imgUrls[self.imgIndex] success:^(UIImage *image) {
             [self setImageViewFrame:image];
         } failure:nil];
         
         self.btnPrev.hidden = self.imgIndex <= 0;
         self.btnNext.hidden = self.imgIndex >= self.imgUrls.count - 1;
+    } else {
+        [self setImageViewFrame:self.imgBroken];
+        self.btnPrev.hidden = YES;
+        self.btnNext.hidden = YES;
     }
 }
 
