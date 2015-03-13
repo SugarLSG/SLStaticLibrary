@@ -19,15 +19,15 @@
  **/
 + (BOOL)isNullOrWhiteSpace:(NSString *)value;
 
+
 /**
  删除前后所有空格字符
  **/
 - (instancetype)trim;
 
-
 /**
- 
+ 根据字体，宽度，计算文字总高度
  **/
-- (CGFloat)heightForFont:(UIFont *)font andWidth:(float)width;
+- (CGFloat)heightForFont:(UIFont *)font width:(float)width;
 
 @end

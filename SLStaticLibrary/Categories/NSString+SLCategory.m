@@ -28,7 +28,7 @@
     return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 }
 
-- (CGFloat)heightForFont:(UIFont *)font andWidth:(float)width {
+- (CGFloat)heightForFont:(UIFont *)font width:(float)width {
     NSDictionary *attributes = @{ NSFontAttributeName: font };
     CGRect sizeToFit = [self boundingRectWithSize:CGSizeMake(width, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:nil];
     
