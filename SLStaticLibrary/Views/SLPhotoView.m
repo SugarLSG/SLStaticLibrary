@@ -46,11 +46,12 @@
     return self;
 }
 
-- (instancetype)initWithPlaceholderImg:(UIImage *)imgPlaceholder brokenImg:(UIImage *)imgBroken imgUrlArray:(NSArray *)imgUrls {
+- (instancetype)initWithPlaceholderImg:(UIImage *)imgPlaceholder brokenImg:(UIImage *)imgBroken imgUrlArray:(NSArray *)imgUrls imgIndex:(NSInteger)imgIndex {
     if (self = [super init]) {
         self.imgPlaceholder = imgPlaceholder;
         self.imgBroken = imgBroken;
         self.imgUrls = imgUrls;
+        self.imgIndex = imgIndex;
         
         [self initializeView];
     }

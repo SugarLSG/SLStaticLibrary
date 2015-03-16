@@ -24,7 +24,7 @@
 @property (nonatomic, assign) NSInteger imgIndex;           // 显示的图片
 @property (nonatomic, strong) id<SLPhotoViewDelegate> delegate;
 
-- (instancetype)initWithPlaceholderImg:(UIImage *)imgPlaceholder brokenImg:(UIImage *)imgBroken imgUrlArray:(NSArray *)imgUrls;
+- (instancetype)initWithPlaceholderImg:(UIImage *)imgPlaceholder brokenImg:(UIImage *)imgBroken imgUrlArray:(NSArray *)imgUrls imgIndex:(NSInteger)imgIndex;
 
 - (void)show;
 
