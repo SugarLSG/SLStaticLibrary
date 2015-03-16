@@ -4,6 +4,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SLPropertyCorrespondenceModel.h"
 
 
 @interface SLBaseNetworkModel : NSObject

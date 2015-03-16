@@ -5,7 +5,6 @@
 
 #import "SLBaseNetworkModel.h"
 #import <objc/runtime.h>
-#import "SLPropertyCorrespondenceModel.h"
 
 
 @interface SLBaseNetworkModel ()
