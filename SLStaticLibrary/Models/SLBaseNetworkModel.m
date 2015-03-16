@@ -39,8 +39,8 @@
                 
                 // 是否在子类中有进行转换设置
                 SLPropertyCorrespondenceModel *correspondence = self.propertyCorrespondences && [self.propertyCorrespondences.allKeys containsObject:propertyName] ?
-                self.propertyCorrespondences[propertyName]:
-                [SLPropertyCorrespondenceModel correspondenceWithKey:propertyName propertyType:SLPropertyTypeItem];
+                    self.propertyCorrespondences[propertyName]:
+                    [SLPropertyCorrespondenceModel correspondenceWithKey:propertyName propertyType:SLPropertyTypeItem];
                 
                 // 转换值
                 switch (correspondence.propertyType) {
@@ -48,18 +48,30 @@
                         // Item 类型，根据属性的类型，判断是否转换后赋值
                         id data = [jsonModel objectForKey:correspondence.key];
                         
+                        // 获取属性类型
                         char *pt = property_copyAttributeValue(properties[i], "T");
                         NSString *propertyType = [[[NSString stringWithUTF8String:pt]
                                                    stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"@"]]
                                                   stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"\""]];
                         free(pt);
                         
-                        // 是否指定类型的子类
-                        if (propertyType && [NSClassFromString(propertyType) isSubclassOfClass:[SLBaseNetworkModel class]]) {
-                            [self setValue:[[NSClassFromString(propertyType) alloc] initWithJsonModel:data] forKey:propertyName];
+                        // 是否有设置对应属性类型
+                        if (correspondence.customModelName) {
+                            // 有，检查是否声明的属性类型的子类，并且为指定类型的子类
+                            Class customModelClass = NSClassFromString(correspondence.customModelName);
+                            if ([customModelClass isSubclassOfClass:[SLBaseNetworkModel class]] &&
+                                [customModelClass isSubclassOfClass:[SLBaseNetworkModel class]]) {
+                                [self setValue:[[customModelClass alloc] initWithJsonModel:data] forKey:propertyName];
+                                continue;
+                            }
                         } else {
-                            [self setValue:data forKey:propertyName];
+                            // 无，检查是否为指定类型的子类
+                            if (propertyType && [NSClassFromString(propertyType) isSubclassOfClass:[SLBaseNetworkModel class]]) {
+                                [self setValue:[[NSClassFromString(propertyType) alloc] initWithJsonModel:data] forKey:propertyName];
+                                continue;
+                            }
                         }
+                        [self setValue:data forKey:propertyName];
                         
                         break;
                     }
@@ -68,7 +80,7 @@
                         // 数组类型，根据设置的类型，判断是否转换后赋值
                         NSArray *array = (NSArray *)[jsonModel objectForKey:correspondence.key];
                         
-                        // 是否指定类型的子类
+                        // 是否为指定类型的子类
                         if (correspondence.customModelName && [NSClassFromString(correspondence.customModelName) isSubclassOfClass:[SLBaseNetworkModel class]]) {
                             NSMutableArray *models = [[NSMutableArray alloc] init];
                             for (id data in array) {
