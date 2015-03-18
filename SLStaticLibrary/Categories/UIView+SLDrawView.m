@@ -12,8 +12,6 @@
 - (void)drawBorder:(SLDrawViewBorderType)borderType borderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth {
     // 获得处理的上下文
     CGContextRef context = UIGraphicsGetCurrentContext();
-    // 设置线条样式
-    CGContextSetLineCap(context, kCGLineCapSquare);
     // 设置颜色
     NSDictionary *colorValues = [borderColor getRGBADictionary];
     CGContextSetRGBStrokeColor(context, [colorValues[UIColorRedValueName] floatValue], [colorValues[UIColorGreenValueName] floatValue], [colorValues[UIColorBlueValueName] floatValue], [colorValues[UIColorAlphaValueName] floatValue]);
@@ -23,30 +21,33 @@
     // 开始一个起始路径
     CGContextBeginPath(context);
     // 设置起始、结束坐标
+    CGPoint points[2];
     switch (borderType) {
         case SLDrawViewBorderTypeTop: {
-            CGContextMoveToPoint(context, 0, 0);
-            CGContextAddLineToPoint(context, self.frame.size.width, 0);
+            points[0] = CGPointMake(0, 0);
+            points[1] = CGPointMake(self.frame.size.width, 0);
             break;
         }
         case SLDrawViewBorderTypeBottom: {
-            CGContextMoveToPoint(context, 0, self.frame.origin.y);
-            CGContextAddLineToPoint(context, self.frame.size.width, self.frame.origin.y);
+            points[0] = CGPointMake(0, self.frame.origin.y);
+            points[1] = CGPointMake(self.frame.size.width, self.frame.size.height);
             break;
         }
         case SLDrawViewBorderTypeLeft: {
-            CGContextMoveToPoint(context, 0, 0);
-            CGContextAddLineToPoint(context, 0, self.frame.origin.y);
+            points[0] = CGPointMake(0, 0);
+            points[1] = CGPointMake(0, self.frame.size.height);
             break;
         }
         case SLDrawViewBorderTypeRight: {
-            CGContextMoveToPoint(context, self.frame.size.width, 0);
-            CGContextAddLineToPoint(context, self.frame.size.width, self.frame.origin.y);
+            points[0] = CGPointMake(self.frame.size.width, 0);
+            points[1] = CGPointMake(self.frame.size.width, self.frame.size.height);
             break;
         }
     }
-    // 连接上面定义的坐标点
-    CGContextStrokePath(context);
+    // 添加坐标点
+    CGContextAddLines(context, points, 2);
+    // 根据坐标绘制路径
+    CGContextDrawPath(context, kCGPathStroke);
 }
 
 @end
