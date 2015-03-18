@@ -19,6 +19,7 @@
 		2A6873C01AA6F9440039D966 /* SLBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A6873BF1AA6F9440039D966 /* SLBaseTableViewCell.m */; };
 		2A6873EF1AA85B1D0039D966 /* SLImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A6873EE1AA85B1D0039D966 /* SLImageView.m */; };
 		2A6873F21AA85C6C0039D966 /* SLLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A6873F11AA85C6C0039D966 /* SLLabel.m */; };
+		2A832D411AB95E140067F824 /* UIView+SLDrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A832D401AB95E140067F824 /* UIView+SLDrawView.m */; };
 		2A85481F1AA9ACEF00DC8BA5 /* SLPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A85481E1AA9ACEF00DC8BA5 /* SLPhotoView.m */; };
 		92EBA50CDB8F432483412024 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A4A992EBA4509D7D844EB375 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -63,6 +64,8 @@
 		2A6873F01AA85C6C0039D966 /* SLLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLLabel.h; sourceTree = "<group>"; };
 		2A6873F11AA85C6C0039D966 /* SLLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLLabel.m; sourceTree = "<group>"; };
 		2A71805F1AA046AB00252759 /* libSLStaticLibrary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSLStaticLibrary.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A832D3F1AB95E140067F824 /* UIView+SLDrawView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SLDrawView.h"; sourceTree = "<group>"; };
+		2A832D401AB95E140067F824 /* UIView+SLDrawView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SLDrawView.m"; sourceTree = "<group>"; };
 		2A85481D1AA9ACEF00DC8BA5 /* SLPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLPhotoView.h; sourceTree = "<group>"; };
 		2A85481E1AA9ACEF00DC8BA5 /* SLPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLPhotoView.m; sourceTree = "<group>"; };
 		2AAA65511AB171EE0010B10A /* SLImages.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SLImages.bundle; sourceTree = "<group>"; };
@@ -111,6 +114,8 @@
 				2A6873B51AA6F0F40039D966 /* UIColor+SLCategory.m */,
 				2A6873B11AA6F0830039D966 /* UIImage+SLCategory.h */,
 				2A6873B21AA6F0830039D966 /* UIImage+SLCategory.m */,
+				2A832D3F1AB95E140067F824 /* UIView+SLDrawView.h */,
+				2A832D401AB95E140067F824 /* UIView+SLDrawView.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -294,6 +299,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A832D411AB95E140067F824 /* UIView+SLDrawView.m in Sources */,
 				2A85481F1AA9ACEF00DC8BA5 /* SLPhotoView.m in Sources */,
 				2A6873B31AA6F0830039D966 /* UIImage+SLCategory.m in Sources */,
 				2A6873911AA598B00039D966 /* NSString+SLCategory.m in Sources */,
