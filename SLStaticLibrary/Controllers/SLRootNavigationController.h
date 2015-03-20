@@ -40,19 +40,23 @@ typedef NS_ENUM(NSInteger, SLRootNavigationFullViewDirection) {
 - (void)clearTitle;
 /**
  设置文字标题
+ @param strTitle 文字标题
  **/
 - (void)setStringTitle:(NSString *)strTitle;
 /**
  设置图片标题
+ @param ivTitle 图片标题
  **/
 - (void)setImageTitle:(UIImageView *)ivTitle;
 /**
  设置按钮标题
+ @param btnTitle 按钮标题
  **/
 - (void)setButtonTitle:(UIButton *)btnTitle;
 
 /**
  清除边栏按钮
+ @param navigationBarType 边栏类型
  **/
 - (void)clearBarItems:(SLRootNavigationBarType)navigationBarType;
 /**
@@ -61,19 +65,27 @@ typedef NS_ENUM(NSInteger, SLRootNavigationFullViewDirection) {
 - (void)clearAllBarItems;
 /**
  设置边栏按钮
+ @param navigationBarType 边栏类型
+ @param btn 按钮
  **/
 - (void)setBarItem:(SLRootNavigationBarType)navigationBarType button:(UIButton *)btn;
 /**
  设置边栏按钮列
+ @param navigationBarType 边栏类型
+ @param btnList 按钮列表
  **/
 - (void)setBarItems:(SLRootNavigationBarType)navigationBarType buttonList:(NSArray *)btnList;
 
 /**
  显示 Full View 区域
+ @param direction 区域运动方向
+ @param completion 完成时的回调函数
  **/
 - (void)showFullViewWithAnimatedIn:(SLRootNavigationFullViewDirection)direction completion:(void(^)())completion;
 /**
  隐藏 Full View 区域
+ @param direction 区域运动方向
+ @param completion 完成时的回调函数
  **/
 - (void)hideFullViewWithAnimatedOut:(SLRootNavigationFullViewDirection)direction completion:(void(^)())completion;
 /**
@@ -82,6 +94,7 @@ typedef NS_ENUM(NSInteger, SLRootNavigationFullViewDirection) {
 - (void)clearFullView;
 /**
  设置 Full View 区域视图
+ @param subview 内容视图
  **/
 - (void)setFullView:(UIView *)subview;
 

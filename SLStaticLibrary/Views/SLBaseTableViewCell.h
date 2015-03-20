@@ -17,6 +17,7 @@
 
 /**
  根据 Model 重新渲染 Cell View
+ @param cellModel Cell Model
  **/
 - (void)reloadCellViewWithModel:(SLBaseCellModel *)cellModel;
 
