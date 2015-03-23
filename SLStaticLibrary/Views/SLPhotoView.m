@@ -132,15 +132,15 @@
         self.ivPhoto.image = img;
     }
     if (self.ivPhoto.image) {
-        CGFloat contentWidth = applicationHeight - navigationBarHeight;
+        CGFloat contentHeight = applicationHeight - navigationBarHeight;
         CGFloat widthScale = applicationWidth / self.ivPhoto.image.size.width;
-        CGFloat heightScale = contentWidth / self.ivPhoto.image.size.height;
+        CGFloat heightScale = contentHeight / self.ivPhoto.image.size.height;
         // 最小尺寸为最小适配屏幕大小 或 原始尺寸中，小的那个
         self.sIvPhotoMinSize = CGSizeMake(MIN(self.ivPhoto.image.size.width,  self.ivPhoto.image.size.width * MIN(widthScale, heightScale)), MIN(self.ivPhoto.image.size.height,  self.ivPhoto.image.size.height * MIN(widthScale, heightScale)));
         // 最大尺寸为最大适配屏幕2倍大小 或 原始尺寸中，大的那个
         self.sIvPhotoMaxSize = CGSizeMake(MAX(self.ivPhoto.image.size.width, self.ivPhoto.image.size.width * MAX(widthScale, heightScale) * 2), MAX(self.ivPhoto.image.size.height, self.ivPhoto.image.size.height * MAX(widthScale, heightScale) * 2));
         
-        self.ivPhoto.frame = CGRectMake((applicationWidth - self.sIvPhotoMinSize.width) / 2, (contentWidth - self.sIvPhotoMinSize.height) / 2, self.sIvPhotoMinSize.width, self.sIvPhotoMinSize.height);
+        self.ivPhoto.frame = CGRectMake((applicationWidth - self.sIvPhotoMinSize.width) / 2, (contentHeight - self.sIvPhotoMinSize.height) / 2, self.sIvPhotoMinSize.width, self.sIvPhotoMinSize.height);
     }
 }
 
@@ -167,11 +167,11 @@
 #pragma mark - SLImageViewDelegate
 
 - (void)scalePhotoTransform:(CGFloat)scale {
-    CGFloat contentWidth = applicationHeight - navigationBarHeight;
+    CGFloat contentHeight = applicationHeight - navigationBarHeight;
     CGFloat halfWidth = self.ivPhoto.frame.size.width * scale / 2;
     CGFloat halfGeight = self.ivPhoto.frame.size.height * scale / 2;
     CGFloat marginX = MAX(0, (applicationWidth - self.ivPhoto.frame.size.width * scale) / 2);
-    CGFloat marginY = MAX(0, (contentWidth - self.ivPhoto.frame.size.height * scale) / 2);
+    CGFloat marginY = MAX(0, (contentHeight - self.ivPhoto.frame.size.height * scale) / 2);
     CGPoint newCenter = self.ivPhoto.center;
     BOOL isChange = NO;
     // 太偏左
@@ -185,8 +185,8 @@
         isChange = YES;
     }
     // 太偏上
-    if (self.ivPhoto.center.y + halfGeight + marginY < contentWidth) {
-        newCenter.y += (contentWidth - (self.ivPhoto.center.y + halfGeight + marginY));
+    if (self.ivPhoto.center.y + halfGeight + marginY < contentHeight) {
+        newCenter.y += (contentHeight - (self.ivPhoto.center.y + halfGeight + marginY));
         isChange = YES;
     }
     // 太偏下
