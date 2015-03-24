@@ -4,6 +4,7 @@
 //
 
 #import "NSString+SLCategory.h"
+#import "pinyin.h"
 
 
 @implementation NSString (SLCategory)
@@ -33,6 +34,18 @@
     CGRect sizeToFit = [self boundingRectWithSize:CGSizeMake(width, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:nil];
     
     return sizeToFit.size.height;
+}
+
+
+- (NSString *)ConvertPinYinFirstLetters {
+    if (![NSString isNullOrEmpty:self]) {
+        NSString *result = @"";
+        for (NSUInteger i = 0, count = self.length; i < count; ++i) {
+            [result stringByAppendingFormat:@"%c", pinyinFirstLetter([self characterAtIndex:i])];
+        }
+        return result;
+    }
+    return self;
 }
 
 @end

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A579DED1AC137FB004860D9 /* pinyin.c in Sources */ = {isa = PBXBuildFile; fileRef = 2A579DEB1AC137FB004860D9 /* pinyin.c */; };
 		2A5ACE191AAD3DDD00BA7346 /* SLNetworkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A5ACE181AAD3DDD00BA7346 /* SLNetworkHelper.m */; };
 		2A5C3CC71AA1B0DC00AD0A4A /* SLBaseNetworkModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A5C3CC61AA1B0DC00AD0A4A /* SLBaseNetworkModel.m */; };
 		2A5C3CCD1AA1B1BB00AD0A4A /* SLPropertyCorrespondenceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A5C3CCC1AA1B1BB00AD0A4A /* SLPropertyCorrespondenceModel.m */; };
@@ -37,6 +38,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2A579DEB1AC137FB004860D9 /* pinyin.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pinyin.c; sourceTree = "<group>"; };
+		2A579DEC1AC137FB004860D9 /* pinyin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pinyin.h; sourceTree = "<group>"; };
 		2A5ACE171AAD3DDD00BA7346 /* SLNetworkHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLNetworkHelper.h; sourceTree = "<group>"; };
 		2A5ACE181AAD3DDD00BA7346 /* SLNetworkHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLNetworkHelper.m; sourceTree = "<group>"; };
 		2A5ACE1E1AAD6A1D00BA7346 /* SLStaticLibrary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLStaticLibrary.h; sourceTree = "<group>"; };
@@ -110,6 +113,8 @@
 			children = (
 				2A68738F1AA598B00039D966 /* NSString+SLCategory.h */,
 				2A6873901AA598B00039D966 /* NSString+SLCategory.m */,
+				2A579DEB1AC137FB004860D9 /* pinyin.c */,
+				2A579DEC1AC137FB004860D9 /* pinyin.h */,
 				2A6873B41AA6F0F40039D966 /* UIColor+SLCategory.h */,
 				2A6873B51AA6F0F40039D966 /* UIColor+SLCategory.m */,
 				2A6873B11AA6F0830039D966 /* UIImage+SLCategory.h */,
@@ -299,6 +304,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A579DED1AC137FB004860D9 /* pinyin.c in Sources */,
 				2A832D411AB95E140067F824 /* UIView+SLDrawView.m in Sources */,
 				2A85481F1AA9ACEF00DC8BA5 /* SLPhotoView.m in Sources */,
 				2A6873B31AA6F0830039D966 /* UIImage+SLCategory.m in Sources */,
