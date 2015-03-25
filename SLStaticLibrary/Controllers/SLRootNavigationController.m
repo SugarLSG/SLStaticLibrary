@@ -36,20 +36,23 @@
         self->_leftViewWidth = (applicationWidth - width) / 2;
         self->_rightViewWidth = (applicationWidth - width) / 2;
         
+        // Navigation 区域高度
+        self->_navigationHeight = navigationBarHeight;
+        
         /* 初始化各区域 */
-        self.vTitle = [[UIView alloc] initWithFrame:CGRectMake(self->_leftViewWidth, 0, self->_titleViewWidth, navigationBarHeight)];
+        self.vTitle = [[UIView alloc] initWithFrame:CGRectMake(self->_leftViewWidth, 0, self->_titleViewWidth, self->_navigationHeight)];
         self.vTitle.alpha = 1;
         [self.navigationBar addSubview:self.vTitle];
         
-        self.vLeft = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self->_leftViewWidth, navigationBarHeight)];
+        self.vLeft = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self->_leftViewWidth, self->_navigationHeight)];
         self.vLeft.alpha = 1;
         [self.navigationBar addSubview:self.vLeft];
         
-        self.vRight = [[UIView alloc] initWithFrame:CGRectMake(applicationWidth - self->_rightViewWidth, 0, self->_rightViewWidth, navigationBarHeight)];
+        self.vRight = [[UIView alloc] initWithFrame:CGRectMake(applicationWidth - self->_rightViewWidth, 0, self->_rightViewWidth, self->_navigationHeight)];
         self.vRight.alpha = 1;
         [self.navigationBar addSubview:self.vRight];
         
-        self.vFull = [[UIView alloc] initWithFrame:CGRectMake(0, 0, applicationWidth, navigationBarHeight)];
+        self.vFull = [[UIView alloc] initWithFrame:CGRectMake(0, 0, applicationWidth, self->_navigationHeight)];
         self.vFull.alpha = 0;
         self.vFull.hidden = YES;
         [self.navigationBar addSubview:self.vFull];
@@ -120,10 +123,10 @@
     [self clearBarItems:navigationBarType];
     
     if (navigationBarType == SLRootNavigationBarTypeLeft) {
-        btn.frame = CGRectMake(self.barItemMargin, (navigationBarHeight - btn.frame.size.height) / 2, btn.frame.size.width, btn.frame.size.height);
+        btn.frame = CGRectMake(self.barItemMargin, (self->_navigationHeight - btn.frame.size.height) / 2, btn.frame.size.width, btn.frame.size.height);
         [self.vLeft addSubview:btn];
     } else {
-        btn.frame = CGRectMake(self.rightViewWidth - btn.frame.size.width - self.barItemMargin, (navigationBarHeight - btn.frame.size.height) / 2, btn.frame.size.width, btn.frame.size.height);
+        btn.frame = CGRectMake(self.rightViewWidth - btn.frame.size.width - self.barItemMargin, (self->_navigationHeight - btn.frame.size.height) / 2, btn.frame.size.width, btn.frame.size.height);
         [self.vRight addSubview:btn];
     }
 }
@@ -134,10 +137,10 @@
     CGFloat currentMargin = self.barItemMargin;
     for (UIButton *btn in btnList) {
         if (navigationBarType == SLRootNavigationBarTypeLeft) {
-            btn.frame = CGRectMake(currentMargin, (navigationBarHeight - btn.frame.size.height) / 2, btn.frame.size.width, btn.frame.size.height);
+            btn.frame = CGRectMake(currentMargin, (self->_navigationHeight - btn.frame.size.height) / 2, btn.frame.size.width, btn.frame.size.height);
             [self.vLeft addSubview:btn];
         } else {
-            btn.frame = CGRectMake(self.rightViewWidth - btn.frame.size.width - currentMargin, (navigationBarHeight - btn.frame.size.height) / 2, btn.frame.size.width, btn.frame.size.height);
+            btn.frame = CGRectMake(self.rightViewWidth - btn.frame.size.width - currentMargin, (self->_navigationHeight - btn.frame.size.height) / 2, btn.frame.size.width, btn.frame.size.height);
             [self.vRight addSubview:btn];
         }
         
@@ -162,10 +165,10 @@
                 self.vFull.frame = CGRectMake(applicationWidth, 0, self.vFull.frame.size.width, self.vFull.frame.size.height);
                 break;
             case SLRootNavigationFullViewDirectionTopToBottom:
-                self.vFull.frame = CGRectMake(0, -(statusBarHeight + navigationBarHeight), self.vFull.frame.size.width, self.vFull.frame.size.height);
+                self.vFull.frame = CGRectMake(0, -(statusBarHeight + self->_navigationHeight), self.vFull.frame.size.width, self.vFull.frame.size.height);
                 break;
             case SLRootNavigationFullViewDirectionBottomToTop:
-                self.vFull.frame = CGRectMake(0, navigationBarHeight, self.vFull.frame.size.width, self.vFull.frame.size.height);
+                self.vFull.frame = CGRectMake(0, self->_navigationHeight, self.vFull.frame.size.width, self.vFull.frame.size.height);
                 break;
         }
     }
@@ -203,10 +206,10 @@
                 self.vFull.frame = CGRectMake(-applicationWidth, 0, self.vFull.frame.size.width, self.vFull.frame.size.height);
                 break;
             case SLRootNavigationFullViewDirectionTopToBottom:
-                self.vFull.frame = CGRectMake(0, navigationBarHeight, self.vFull.frame.size.width, self.vFull.frame.size.height);
+                self.vFull.frame = CGRectMake(0, self->_navigationHeight, self.vFull.frame.size.width, self.vFull.frame.size.height);
                 break;
             case SLRootNavigationFullViewDirectionBottomToTop:
-                self.vFull.frame = CGRectMake(0, -(statusBarHeight + navigationBarHeight), self.vFull.frame.size.width, self.vFull.frame.size.height);
+                self.vFull.frame = CGRectMake(0, -(statusBarHeight + self->_navigationHeight), self.vFull.frame.size.width, self.vFull.frame.size.height);
                 break;
         }
         self.vFull.alpha = 0;
