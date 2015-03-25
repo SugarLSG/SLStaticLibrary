@@ -94,26 +94,10 @@
     }
 }
 
-- (void)setStringTitle:(NSString *)strTitle {
+- (void)setTitleView:(UIView *)subview {
     [self clearTitle];
     
-    UILabel *lblTitle = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.vTitle.frame.size.width, self.vTitle.frame.size.height)];
-    lblTitle.textAlignment = NSTextAlignmentCenter;
-    lblTitle.text = strTitle;
-    lblTitle.textColor = [UIColor whiteColor];
-    [self.vTitle addSubview:lblTitle];
-}
-
-- (void)setImageTitle:(UIImageView *)ivTitle {
-    [self clearTitle];
-    
-    [self.vTitle addSubview:ivTitle];
-}
-
-- (void)setButtonTitle:(UIButton *)btnTitle {
-    [self clearTitle];
-    
-    [self.vTitle addSubview:btnTitle];
+    [self.vTitle addSubview:subview];
 }
 
 

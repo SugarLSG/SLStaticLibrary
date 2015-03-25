@@ -39,20 +39,10 @@ typedef NS_ENUM(NSInteger, SLRootNavigationFullViewDirection) {
  **/
 - (void)clearTitle;
 /**
- 设置文字标题
- @param strTitle 文字标题
+ 设置标题区域视图
+ @param subview 内容视图
  **/
-- (void)setStringTitle:(NSString *)strTitle;
-/**
- 设置图片标题
- @param ivTitle 图片标题
- **/
-- (void)setImageTitle:(UIImageView *)ivTitle;
-/**
- 设置按钮标题
- @param btnTitle 按钮标题
- **/
-- (void)setButtonTitle:(UIButton *)btnTitle;
+- (void)setTitleView:(UIView *)subview;
 
 /**
  清除边栏按钮
