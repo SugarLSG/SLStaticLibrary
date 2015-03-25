@@ -41,6 +41,6 @@
  将字符串中中文字符转为拼音首字母
  @return 拼音首字符串
  **/
-- (NSString *)ConvertPinYinFirstLetters;
+- (NSString *)convertPinYinFirstLetters;
 
 @end

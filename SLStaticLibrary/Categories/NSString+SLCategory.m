@@ -37,7 +37,7 @@
 }
 
 
-- (NSString *)ConvertPinYinFirstLetters {
+- (NSString *)convertPinYinFirstLetters {
     if (![NSString isNullOrEmpty:self]) {
         NSString *result = @"";
         for (NSUInteger i = 0, count = self.length; i < count; ++i) {
