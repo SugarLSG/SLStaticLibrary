@@ -10,7 +10,6 @@
 
 - (instancetype)init {
     if (self = [super init]) {
-        [self makeInteractiveOperationEnabled];
         self.imageViewInteractiveType = SLImageViewInteractiveTypeClick | SLImageViewInteractiveTypeDoubleClick | SLImageViewInteractiveTypeZoom | SLImageViewInteractiveTypeMove;
     }
     return self;
@@ -18,7 +17,6 @@
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
-        [self makeInteractiveOperationEnabled];
         self.imageViewInteractiveType = SLImageViewInteractiveTypeClick | SLImageViewInteractiveTypeDoubleClick | SLImageViewInteractiveTypeZoom | SLImageViewInteractiveTypeMove;
     }
     return self;
@@ -26,7 +24,6 @@
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
-        [self makeInteractiveOperationEnabled];
         self.imageViewInteractiveType = SLImageViewInteractiveTypeClick | SLImageViewInteractiveTypeDoubleClick | SLImageViewInteractiveTypeZoom | SLImageViewInteractiveTypeMove;
     }
     return self;
@@ -34,7 +31,6 @@
 
 - (instancetype)initWithImage:(UIImage *)image {
     if (self = [super initWithImage:image]) {
-        [self makeInteractiveOperationEnabled];
         self.imageViewInteractiveType = SLImageViewInteractiveTypeClick | SLImageViewInteractiveTypeDoubleClick | SLImageViewInteractiveTypeZoom | SLImageViewInteractiveTypeMove;
     }
     return self;
@@ -42,18 +38,9 @@
 
 - (instancetype)initWithImage:(UIImage *)image highlightedImage:(UIImage *)highlightedImage {
     if (self = [super initWithImage:image highlightedImage:highlightedImage]) {
-        [self makeInteractiveOperationEnabled];
         self.imageViewInteractiveType = SLImageViewInteractiveTypeClick | SLImageViewInteractiveTypeDoubleClick | SLImageViewInteractiveTypeZoom | SLImageViewInteractiveTypeMove;
     }
     return self;
-}
-
-/**
- 设置允许交互操作
- **/
-- (void)makeInteractiveOperationEnabled {
-    self.userInteractionEnabled = YES;
-    self.multipleTouchEnabled = YES;
 }
 
 
@@ -67,53 +54,57 @@
         [self removeGestureRecognizer:gr];
     }
     
+    // 设置允许交互操作
+    self.userInteractionEnabled = YES;
+    self.multipleTouchEnabled = YES;
+    
     self->_imageViewInteractiveType = imageViewInteractiveType;
-    if (imageViewInteractiveType == SLImageViewInteractiveTypeClick) {
+    if (self.imageViewInteractiveType == SLImageViewInteractiveTypeClick) {
         [self setSingleTapGestureRecognizer];
-    } else if (imageViewInteractiveType == SLImageViewInteractiveTypeDoubleClick) {
+    } else if (self.imageViewInteractiveType == SLImageViewInteractiveTypeDoubleClick) {
         [self setDoubleTapGestureRecognizer];
-    } else if (imageViewInteractiveType == SLImageViewInteractiveTypeZoom) {
+    } else if (self.imageViewInteractiveType == SLImageViewInteractiveTypeZoom) {
         [self setPinchGestureRecognizer];
-    } else if (imageViewInteractiveType == SLImageViewInteractiveTypeMove) {
+    } else if (self.imageViewInteractiveType == SLImageViewInteractiveTypeMove) {
         [self setPanGestureRecognizer];
     }
-    else if (imageViewInteractiveType == (SLImageViewInteractiveTypeClick | SLImageViewInteractiveTypeDoubleClick)) {
+    else if (self.imageViewInteractiveType == (SLImageViewInteractiveTypeClick | SLImageViewInteractiveTypeDoubleClick)) {
         [self setSingleTapGestureRecognizer];
         [self setDoubleTapGestureRecognizer];
-    } else if (imageViewInteractiveType == (SLImageViewInteractiveTypeClick | SLImageViewInteractiveTypeZoom)) {
-        [self setSingleTapGestureRecognizer];
-        [self setPinchGestureRecognizer];
-    } else if (imageViewInteractiveType == (SLImageViewInteractiveTypeClick | SLImageViewInteractiveTypeMove)) {
-        [self setSingleTapGestureRecognizer];
-        [self setPanGestureRecognizer];
-    } else if (imageViewInteractiveType == (SLImageViewInteractiveTypeDoubleClick | SLImageViewInteractiveTypeZoom)) {
-        [self setDoubleTapGestureRecognizer];
-        [self setPinchGestureRecognizer];
-    } else if (imageViewInteractiveType == (SLImageViewInteractiveTypeDoubleClick | SLImageViewInteractiveTypeMove)) {
-        [self setDoubleTapGestureRecognizer];
-        [self setPanGestureRecognizer];
-    } else if (imageViewInteractiveType == (SLImageViewInteractiveTypeZoom | SLImageViewInteractiveTypeMove)) {
-        [self setPinchGestureRecognizer];
-        [self setPanGestureRecognizer];
-    }
-    else if (imageViewInteractiveType == (SLImageViewInteractiveTypeClick | SLImageViewInteractiveTypeDoubleClick | SLImageViewInteractiveTypeZoom)) {
-        [self setSingleTapGestureRecognizer];
-        [self setDoubleTapGestureRecognizer];
-        [self setPinchGestureRecognizer];
-    } else if (imageViewInteractiveType == (SLImageViewInteractiveTypeClick | SLImageViewInteractiveTypeDoubleClick | SLImageViewInteractiveTypeMove)) {
-        [self setSingleTapGestureRecognizer];
-        [self setDoubleTapGestureRecognizer];
-        [self setPanGestureRecognizer];
-    } else if (imageViewInteractiveType == (SLImageViewInteractiveTypeClick | SLImageViewInteractiveTypeZoom | SLImageViewInteractiveTypeMove)) {
+    } else if (self.imageViewInteractiveType == (SLImageViewInteractiveTypeClick | SLImageViewInteractiveTypeZoom)) {
         [self setSingleTapGestureRecognizer];
         [self setPinchGestureRecognizer];
+    } else if (self.imageViewInteractiveType == (SLImageViewInteractiveTypeClick | SLImageViewInteractiveTypeMove)) {
+        [self setSingleTapGestureRecognizer];
         [self setPanGestureRecognizer];
-    } else if (imageViewInteractiveType == (SLImageViewInteractiveTypeDoubleClick | SLImageViewInteractiveTypeZoom | SLImageViewInteractiveTypeMove)) {
+    } else if (self.imageViewInteractiveType == (SLImageViewInteractiveTypeDoubleClick | SLImageViewInteractiveTypeZoom)) {
         [self setDoubleTapGestureRecognizer];
+        [self setPinchGestureRecognizer];
+    } else if (self.imageViewInteractiveType == (SLImageViewInteractiveTypeDoubleClick | SLImageViewInteractiveTypeMove)) {
+        [self setDoubleTapGestureRecognizer];
+        [self setPanGestureRecognizer];
+    } else if (self.imageViewInteractiveType == (SLImageViewInteractiveTypeZoom | SLImageViewInteractiveTypeMove)) {
         [self setPinchGestureRecognizer];
         [self setPanGestureRecognizer];
     }
-    else if (imageViewInteractiveType == (SLImageViewInteractiveTypeClick | SLImageViewInteractiveTypeDoubleClick | SLImageViewInteractiveTypeZoom | SLImageViewInteractiveTypeMove)) {
+    else if (self.imageViewInteractiveType == (SLImageViewInteractiveTypeClick | SLImageViewInteractiveTypeDoubleClick | SLImageViewInteractiveTypeZoom)) {
+        [self setSingleTapGestureRecognizer];
+        [self setDoubleTapGestureRecognizer];
+        [self setPinchGestureRecognizer];
+    } else if (self.imageViewInteractiveType == (SLImageViewInteractiveTypeClick | SLImageViewInteractiveTypeDoubleClick | SLImageViewInteractiveTypeMove)) {
+        [self setSingleTapGestureRecognizer];
+        [self setDoubleTapGestureRecognizer];
+        [self setPanGestureRecognizer];
+    } else if (self.imageViewInteractiveType == (SLImageViewInteractiveTypeClick | SLImageViewInteractiveTypeZoom | SLImageViewInteractiveTypeMove)) {
+        [self setSingleTapGestureRecognizer];
+        [self setPinchGestureRecognizer];
+        [self setPanGestureRecognizer];
+    } else if (self.imageViewInteractiveType == (SLImageViewInteractiveTypeDoubleClick | SLImageViewInteractiveTypeZoom | SLImageViewInteractiveTypeMove)) {
+        [self setDoubleTapGestureRecognizer];
+        [self setPinchGestureRecognizer];
+        [self setPanGestureRecognizer];
+    }
+    else if (self.imageViewInteractiveType == (SLImageViewInteractiveTypeClick | SLImageViewInteractiveTypeDoubleClick | SLImageViewInteractiveTypeZoom | SLImageViewInteractiveTypeMove)) {
         [self setSingleTapGestureRecognizer];
         [self setDoubleTapGestureRecognizer];
         [self setPinchGestureRecognizer];

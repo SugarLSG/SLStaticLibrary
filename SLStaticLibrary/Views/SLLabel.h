@@ -8,6 +8,12 @@
 @class SLLabel;
 
 
+typedef NS_ENUM(NSInteger, SLLabelInteractiveType) {
+    SLLabelInteractiveTypeNone = 0,
+    SLLabelInteractiveTypeClick = 1 << 0
+};
+
+
 @protocol SLLabelDelegate <NSObject>
 
 @optional
@@ -23,6 +29,7 @@
 @interface SLLabel : UILabel
 
 @property (nonatomic, strong) id parameter;
+@property (nonatomic, assign) SLLabelInteractiveType labelInteractiveType;
 @property (nonatomic, weak) id<SLLabelDelegate> delegate;
 
 @end

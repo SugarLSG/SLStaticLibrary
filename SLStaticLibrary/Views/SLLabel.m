@@ -6,59 +6,59 @@
 #import "SLLabel.h"
 
 
-@interface SLLabel ()
-
-@property (nonatomic, assign) BOOL isMoving;
-
-@end
-
-
 @implementation SLLabel
 
 - (instancetype)init {
     if (self = [super init]) {
-        [self makeInteractiveOperationEnabled];
-        [self addGestureRecognizer];
+        self.labelInteractiveType = SLLabelInteractiveTypeClick;
     }
     return self;
 }
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
-        [self makeInteractiveOperationEnabled];
-        [self addGestureRecognizer];
+        self.labelInteractiveType = SLLabelInteractiveTypeClick;
     }
     return self;
 }
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
-        [self makeInteractiveOperationEnabled];
-        [self addGestureRecognizer];
+        self.labelInteractiveType = SLLabelInteractiveTypeClick;
     }
     return self;
 }
 
+
+#pragma mark - 交互
+
 /**
- 设置允许交互操作
+ 设置交互手势
  **/
-- (void)makeInteractiveOperationEnabled {
+- (void)setLabelInteractiveType:(SLLabelInteractiveType)labelInteractiveType {
+    for (UIGestureRecognizer *gr in self.gestureRecognizers) {
+        [self removeGestureRecognizer:gr];
+    }
+    
+    // 设置允许交互操作
     self.userInteractionEnabled = YES;
     self.multipleTouchEnabled = YES;
+    
+    self->_labelInteractiveType = labelInteractiveType;
+    if (self.labelInteractiveType == SLLabelInteractiveTypeClick) {
+        [self setSingleTapGestureRecognizer];
+    }
 }
 
 /**
- 添加交互手势
+ 单击
  **/
-- (void)addGestureRecognizer {
-    // 单击
+- (void)setSingleTapGestureRecognizer {
     UITapGestureRecognizer *singleTapGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTapView:)];
     singleTapGR.numberOfTapsRequired = 1;
     [self addGestureRecognizer:singleTapGR];
 }
 
-
-#pragma mark - 交互
 
 - (void)singleTapView:(UITapGestureRecognizer *)singleTapView {
     if (singleTapView.state == UIGestureRecognizerStateEnded) {
