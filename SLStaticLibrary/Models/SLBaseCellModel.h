@@ -3,11 +3,11 @@
 //  SLStaticLibrary
 //
 
-#import "SLBaseNetworkModel.h"
+#import "SLJsonModel.h"
 #import <UIKit/UIKit.h>
 
 
-@interface SLBaseCellModel : SLBaseNetworkModel
+@interface SLBaseCellModel : SLJsonModel
 
 - (CGSize)getItemSize;
 

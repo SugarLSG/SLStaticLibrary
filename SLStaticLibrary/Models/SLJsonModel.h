@@ -1,5 +1,5 @@
 //
-//  SLBaseNetworkModel.h
+//  SLJsonModel.h
 //  SLStaticLibrary
 //
 
@@ -7,7 +7,7 @@
 #import "SLPropertyCorrespondenceModel.h"
 
 
-@interface SLBaseNetworkModel : NSObject
+@interface SLJsonModel : NSObject
 
 @property (nonatomic, strong, readonly) id jsonModel;   // 原 Json 数据
 
@@ -23,5 +23,12 @@
  @param propertyCorrespondences 属性配置列表
  **/
 - (void)setPropertyCorrespondences:(NSDictionary *)propertyCorrespondences;
+
+/**
+ 转换为 Dictionary Model
+ @param model 要转换的 Model
+ @return 转换后的 Dictionary Model
+ **/
++ (NSDictionary *)convertToDictionary:(NSObject *)model;
 
 @end

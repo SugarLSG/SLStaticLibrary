@@ -1,13 +1,13 @@
 //
-//  SLBaseNetworkModel.m
+//  SLJsonModel.m
 //  SLStaticLibrary
 //
 
-#import "SLBaseNetworkModel.h"
+#import "SLJsonModel.h"
 #import <objc/runtime.h>
 
 
-@interface SLBaseNetworkModel ()
+@interface SLJsonModel ()
 
 @property (nonatomic, strong) NSArray *ignoreProperties;
 @property (nonatomic, strong) NSDictionary *propertyCorrespondences;
@@ -15,7 +15,7 @@
 @end
 
 
-@implementation SLBaseNetworkModel
+@implementation SLJsonModel
 
 - (instancetype)initWithJsonModel:(id)jsonModel {
     if (self = [super init]) {
@@ -59,14 +59,14 @@
                         if (correspondence.customModelName) {
                             // 有，检查是否声明的属性类型的子类，并且为指定类型的子类
                             Class customModelClass = NSClassFromString(correspondence.customModelName);
-                            if ([customModelClass isSubclassOfClass:[SLBaseNetworkModel class]] &&
-                                [customModelClass isSubclassOfClass:[SLBaseNetworkModel class]]) {
+                            if ([customModelClass isSubclassOfClass:[SLJsonModel class]] &&
+                                [customModelClass isSubclassOfClass:[SLJsonModel class]]) {
                                 [self setValue:[[customModelClass alloc] initWithJsonModel:data] forKey:propertyName];
                                 continue;
                             }
                         } else {
                             // 无，检查是否为指定类型的子类
-                            if (propertyType && [NSClassFromString(propertyType) isSubclassOfClass:[SLBaseNetworkModel class]]) {
+                            if (propertyType && [NSClassFromString(propertyType) isSubclassOfClass:[SLJsonModel class]]) {
                                 [self setValue:[[NSClassFromString(propertyType) alloc] initWithJsonModel:data] forKey:propertyName];
                                 continue;
                             }
@@ -81,7 +81,7 @@
                         NSArray *array = (NSArray *)[jsonModel objectForKey:correspondence.key];
                         
                         // 是否为指定类型的子类
-                        if (correspondence.customModelName && [NSClassFromString(correspondence.customModelName) isSubclassOfClass:[SLBaseNetworkModel class]]) {
+                        if (correspondence.customModelName && [NSClassFromString(correspondence.customModelName) isSubclassOfClass:[SLJsonModel class]]) {
                             NSMutableArray *models = [[NSMutableArray alloc] init];
                             for (id data in array) {
                                 [models addObject:[[NSClassFromString(correspondence.customModelName) alloc] initWithJsonModel:data]];
@@ -99,6 +99,10 @@
         }
     }
     return self;
+}
+
++ (NSDictionary *)convertToDictionary:(NSObject *)model {
+    return nil;
 }
 
 @end
