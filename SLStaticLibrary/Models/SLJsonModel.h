@@ -24,11 +24,4 @@
  **/
 - (void)setPropertyCorrespondences:(NSDictionary *)propertyCorrespondences;
 
-/**
- 转换为 Dictionary Model
- @param model 要转换的 Model
- @return 转换后的 Dictionary Model
- **/
-+ (NSDictionary *)convertToDictionary:(NSObject *)model;
-
 @end

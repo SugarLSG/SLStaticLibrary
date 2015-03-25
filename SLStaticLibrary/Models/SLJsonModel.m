@@ -101,8 +101,4 @@
     return self;
 }
 
-+ (NSDictionary *)convertToDictionary:(NSObject *)model {
-    return nil;
-}
-
 @end
