@@ -7,6 +7,12 @@
 #import "pinyin.h"
 
 
+#define LOWERCASE_START 65
+#define LOWERCASE_END 90
+#define UPPERCASE_START 97
+#define UPPERCASE_END 122
+
+
 @implementation NSString (SLCategory)
 
 + (BOOL)isNullOrEmpty:(NSString *)value {
@@ -41,9 +47,15 @@
     if (![NSString isNullOrEmpty:self]) {
         NSString *result = @"";
         for (NSUInteger i = 0, count = self.length; i < count; ++i) {
-            [result stringByAppendingFormat:@"%c", pinyinFirstLetter([self characterAtIndex:i])];
+            unichar c = [self characterAtIndex:i];
+            if (!((c >= LOWERCASE_START && c <= LOWERCASE_END) ||
+                  (c >= UPPERCASE_START && c <= UPPERCASE_END))) {
+                c = pinyinFirstLetter(c);
+            }
+            
+            result = [result stringByAppendingFormat:@"%c", c];
         }
-        return result;
+        return [result uppercaseString];
     }
     return self;
 }
