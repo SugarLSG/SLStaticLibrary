@@ -10,8 +10,15 @@
 
 @interface SLBaseTableViewCell : UITableViewCell
 
+// Cell 宽度（用于适配宽度）
+@property (nonatomic, assign, readonly) CGFloat cellWidth;
 // 是否已初始化界面
 @property (nonatomic, assign, readonly) BOOL didInitializeCellView;
+
+/**
+ @param cellWidth Cell 宽度
+ **/
+- (instancetype)initWithCellWidth:(CGFloat)cellWidth style:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier;
 
 /**
  初始化 Cell VIew
