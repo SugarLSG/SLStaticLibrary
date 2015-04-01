@@ -8,9 +8,9 @@
 
 @implementation SLBaseCellModel
 
-- (CGSize)getItemSize {
+- (CGFloat)getItemHeight {
     // 请在子类中重写该方法
-    return CGSizeZero;
+    return 0;
 }
 
 @end

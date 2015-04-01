@@ -9,6 +9,6 @@
 
 @interface SLBaseCellModel : SLJsonModel
 
-- (CGSize)getItemSize;
+- (CGFloat)getItemHeight;
 
 @end
