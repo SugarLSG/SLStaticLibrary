@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A3298EF1ACE9BF700108C2D /* NSDate+SLCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3298EE1ACE9BF700108C2D /* NSDate+SLCategory.m */; };
 		2A579DED1AC137FB004860D9 /* pinyin.c in Sources */ = {isa = PBXBuildFile; fileRef = 2A579DEB1AC137FB004860D9 /* pinyin.c */; };
 		2A579E281AC2A5C9004860D9 /* SLJsonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A579E271AC2A5C9004860D9 /* SLJsonModel.m */; };
 		2A5ACE191AAD3DDD00BA7346 /* SLNetworkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A5ACE181AAD3DDD00BA7346 /* SLNetworkHelper.m */; };
@@ -39,6 +40,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2A3298ED1ACE9BF700108C2D /* NSDate+SLCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+SLCategory.h"; sourceTree = "<group>"; };
+		2A3298EE1ACE9BF700108C2D /* NSDate+SLCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+SLCategory.m"; sourceTree = "<group>"; };
 		2A579DEB1AC137FB004860D9 /* pinyin.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pinyin.c; sourceTree = "<group>"; };
 		2A579DEC1AC137FB004860D9 /* pinyin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pinyin.h; sourceTree = "<group>"; };
 		2A579E261AC2A5C9004860D9 /* SLJsonModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLJsonModel.h; sourceTree = "<group>"; };
@@ -114,6 +117,8 @@
 		2A5C3CAB1AA16F2500AD0A4A /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				2A3298ED1ACE9BF700108C2D /* NSDate+SLCategory.h */,
+				2A3298EE1ACE9BF700108C2D /* NSDate+SLCategory.m */,
 				2A68738F1AA598B00039D966 /* NSString+SLCategory.h */,
 				2A6873901AA598B00039D966 /* NSString+SLCategory.m */,
 				2A579DEB1AC137FB004860D9 /* pinyin.c */,
@@ -312,6 +317,7 @@
 				2A579DED1AC137FB004860D9 /* pinyin.c in Sources */,
 				2A832D411AB95E140067F824 /* UIView+SLDrawView.m in Sources */,
 				2A579E281AC2A5C9004860D9 /* SLJsonModel.m in Sources */,
+				2A3298EF1ACE9BF700108C2D /* NSDate+SLCategory.m in Sources */,
 				2A85481F1AA9ACEF00DC8BA5 /* SLPhotoView.m in Sources */,
 				2A5D89E61AC947C400410C0F /* UIView+SLSetFrame.m in Sources */,
 				2A6873B31AA6F0830039D966 /* UIImage+SLCategory.m in Sources */,
