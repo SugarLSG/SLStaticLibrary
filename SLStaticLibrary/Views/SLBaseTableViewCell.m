@@ -86,7 +86,11 @@
 
 
 + (NSString *)getCellIdentifier {
-    return [NSString stringWithFormat:@"%@Identifier", NSStringFromClass([self class])];
+    return [NSString stringWithFormat:@"%@Identifier", NSStringFromClass(self)];
+}
+
++ (CGFloat)getCellHeightWithModel:(id)cellModel {
+    return 0;
 }
 
 @end

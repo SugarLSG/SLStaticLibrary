@@ -40,4 +40,10 @@
  **/
 + (NSString *)getCellIdentifier;
 
+/**
+ 获取 Cell 高度
+ @param cellModel Cell Model
+ **/
++ (CGFloat)getCellHeightWithModel:(id)cellModel;
+
 @end
