@@ -86,11 +86,29 @@
 
 
 + (NSString *)getCellIdentifier {
+    // self 为子类类型
     return [NSString stringWithFormat:@"%@Identifier", NSStringFromClass(self)];
 }
 
+static NSMutableDictionary *tempCells;
 + (CGFloat)getCellHeightWithModel:(id)cellModel {
-    return 0;
+    if (!tempCells) {
+        tempCells = [[NSMutableDictionary alloc] init];
+    }
+    
+    NSString *itemKey = NSStringFromClass(self);
+    SLBaseTableViewCell *tempCell = [tempCells.allKeys containsObject:itemKey] ? tempCells[itemKey] : nil;
+    if (!tempCell) {
+        tempCell = [[self alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+        [tempCells setValue:tempCell forKey:itemKey];
+    }
+    
+    if (cellModel) {
+        [tempCell reloadCellViewWithModel:cellModel];
+        return tempCell.frame.size.height;
+    } else {
+        return 0;
+    }
 }
 
 @end

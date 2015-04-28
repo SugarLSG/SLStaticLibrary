@@ -8,8 +8,6 @@
 
 @interface SLBaseCollectionViewCell : UICollectionViewCell
 
-// Cell 高度（用于动态高度，请在子类中重写该 getter 方法）
-@property (nonatomic, assign, readonly) CGFloat cellHeight;
 // 是否已初始化界面
 @property (nonatomic, assign, readonly) BOOL didInitializeCellView;
 
