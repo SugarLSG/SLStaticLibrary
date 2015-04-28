@@ -36,4 +36,10 @@
  **/
 - (void)reloadCellViewWithModel:(id)cellModel;
 
+
+/**
+ 获取 Cell Identifier
+ **/
++ (NSString *)getCellIdentifier;
+
 @end

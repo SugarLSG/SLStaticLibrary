@@ -84,4 +84,9 @@
     // 请在子类中重写该方法
 }
 
+
++ (NSString *)getCellIdentifier {
+    return NSStringFromClass([self class]);
+}
+
 @end
