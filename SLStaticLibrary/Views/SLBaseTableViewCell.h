@@ -12,8 +12,12 @@
 
 // Cell 宽度（用于适配宽度）
 @property (nonatomic, assign, readonly) CGFloat cellWidth;
+// Cell 高度（用于动态高度，请在子类中重写该 getter 方法）
+@property (nonatomic, assign, readonly) CGFloat cellHeight;
 // 是否已初始化界面
 @property (nonatomic, assign, readonly) BOOL didInitializeCellView;
+// Cell Identifier（请在子类中重写该 getter 方法）
+@property (nonatomic, assign, readonly) NSString *cellIdentifier;
 
 /**
  @param cellWidth Cell 宽度
@@ -31,11 +35,5 @@
  @param cellModel Cell Model
  **/
 - (void)reloadCellViewWithModel:(id)cellModel;
-
-/**
- 根据 Model 获取 Cell 高度
- @param cellModel Cell Model
- **/
-- (CGFloat)getCellHeightWithModel:(id)cellModel;
 
 @end

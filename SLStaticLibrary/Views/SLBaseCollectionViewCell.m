@@ -51,9 +51,4 @@
     // 请在子类中重写该方法
 }
 
-- (CGFloat)getCellHeightWithModel:(id)cellModel {
-    // 请在子类中重写该方法
-    return 0;
-}
-
 @end
