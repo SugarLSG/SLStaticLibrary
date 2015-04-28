@@ -51,4 +51,9 @@
     // 请在子类中重写该方法
 }
 
+
++ (NSString *)getCellIdentifier {
+    return [NSString stringWithFormat:@"%@Identifier", NSStringFromClass([self class])];
+}
+
 @end

@@ -86,7 +86,7 @@
 
 
 + (NSString *)getCellIdentifier {
-    return NSStringFromClass([self class]);
+    return [NSString stringWithFormat:@"%@Identifier", NSStringFromClass([self class])];
 }
 
 @end
