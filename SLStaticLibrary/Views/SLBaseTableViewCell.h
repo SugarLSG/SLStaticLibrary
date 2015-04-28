@@ -30,6 +30,12 @@
  根据 Model 重新渲染 Cell View
  @param cellModel Cell Model
  **/
-- (void)reloadCellViewWithModel:(SLBaseCellModel *)cellModel;
+- (void)reloadCellViewWithModel:(id)cellModel;
+
+/**
+ 根据 Model 获取 Cell 高度
+ @param cellModel Cell Model
+ **/
+- (CGFloat)getCellHeightWithModel:(id)cellModel;
 
 @end

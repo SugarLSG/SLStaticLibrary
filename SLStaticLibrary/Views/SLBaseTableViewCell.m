@@ -80,8 +80,13 @@
     // 请在子类中重写该方法
 }
 
-- (void)reloadCellViewWithModel:(SLBaseCellModel *)cellModel {
+- (void)reloadCellViewWithModel:(id)cellModel {
     // 请在子类中重写该方法
+}
+
+- (CGFloat)getCellHeightWithModel:(id)cellModel {
+    // 请在子类中重写该方法
+    return 0;
 }
 
 @end
