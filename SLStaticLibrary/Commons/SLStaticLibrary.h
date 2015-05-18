@@ -20,12 +20,12 @@
 #endif
 
 /* size */
-#define mainScreenWidth [UIScreen mainScreen ].bounds.size.width
-#define mainScreenHeight [UIScreen mainScreen ].bounds.size.height
+#define mainScreenWidth [UIScreen mainScreen].bounds.size.width
+#define mainScreenHeight [UIScreen mainScreen].bounds.size.height
 #define statusBarWidth [UIApplication sharedApplication].statusBarFrame.size.width
 #define statusBarHeight [UIApplication sharedApplication].statusBarFrame.size.height
-#define applicationWidth [UIScreen mainScreen ].applicationFrame.size.width
-#define applicationHeight [UIScreen mainScreen ].applicationFrame.size.height
+#define applicationWidth [UIScreen mainScreen].applicationFrame.size.width
+#define applicationHeight [UIScreen mainScreen].applicationFrame.size.height
 #define navigationBarHeight 44
 #define tabBarHeight 49
 
