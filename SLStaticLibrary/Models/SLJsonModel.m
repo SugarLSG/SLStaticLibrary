@@ -22,7 +22,7 @@
         self->_jsonModel = jsonModel;
         
         // 转换为对应 Model
-        if (jsonModel) {
+        if (jsonModel && jsonModel != [NSNull null]) {
             // 获取该类所有属性
             uint count = 0;
             objc_property_t *properties = class_copyPropertyList([self class], &count);
