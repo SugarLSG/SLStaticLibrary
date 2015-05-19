@@ -20,7 +20,7 @@
     // 设置请求格式
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
     // 设置返回格式
-    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     
     return manager;
 }
@@ -45,7 +45,8 @@
                 // 请求成功
                 DebugLog(@"REQUEST SUCCESS, URL: %@", operation.request.URL);
                 if (successBlock) {
-                    successBlock(responseObject);
+                    NSDictionary *responseData = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
+                    successBlock(responseData);
                 }
             } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                 // 请求失败
@@ -67,7 +68,8 @@
                 // 请求成功
                 DebugLog(@"REQUEST SUCCESS, URL: %@", operation.request.URL);
                 if (successBlock) {
-                    successBlock(responseObject);
+                    NSDictionary *responseData = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
+                    successBlock(responseData);
                 }
             } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                 // 请求失败
@@ -101,10 +103,7 @@
                         completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
                             if (image) {
                                 // 请求成功
-                                NSString *catcheTypeStr =
-                                    cacheType == SDImageCacheTypeNone ? @"Internet":
-                                    (cacheType == SDImageCacheTypeDisk ? @"Disk": @"Memory");
-                                DebugLog(@"REQUEST SUCCESS, FROME %@, URL: %@", catcheTypeStr, imageURL);
+                                DebugLog(@"REQUEST SUCCESS, FROME %@, URL: %@", (cacheType == SDImageCacheTypeNone ? @"Internet": (cacheType == SDImageCacheTypeDisk ? @"Disk": @"Memory")), imageURL);
                                 if (successBlock) {
                                     successBlock();
                                 }
@@ -132,10 +131,7 @@
                                     // 完成获取
                                     if (image) {
                                         // 请求成功
-                                        NSString *catcheTypeStr =
-                                            cacheType == SDImageCacheTypeNone ? @"Internet":
-                                            (cacheType == SDImageCacheTypeDisk ? @"Disk": @"Memory");
-                                        DebugLog(@"REQUEST SUCCESS, FROME %@, URL: %@", catcheTypeStr, imageURL);
+                                        DebugLog(@"REQUEST SUCCESS, FROME %@, URL: %@", (cacheType == SDImageCacheTypeNone ? @"Internet": (cacheType == SDImageCacheTypeDisk ? @"Disk": @"Memory")), imageURL);
                                         if (successBlock) {
                                             successBlock(image);
                                         }
