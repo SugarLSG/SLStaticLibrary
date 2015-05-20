@@ -8,6 +8,31 @@
 
 @implementation UIView (SLSetFrame)
 
+- (CGFloat)originX {
+    return self.frame.origin.x;
+}
+
+- (CGFloat)originY {
+    return self.frame.origin.y;
+}
+
+- (CGFloat)finalX {
+    return self.frame.origin.x + self.frame.size.width;
+}
+
+- (CGFloat)finalY {
+    return self.frame.origin.y + self.frame.size.height;
+}
+
+- (CGFloat)sizeWidth {
+    return self.frame.size.width;
+}
+
+- (CGFloat)sizeHeight {
+    return self.frame.size.height;
+}
+
+
 - (void)setFrameX:(CGFloat)x {
     self.frame = CGRectMake(x, self.frame.origin.y, self.frame.size.width, self.frame.size.height);
 }

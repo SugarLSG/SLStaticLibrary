@@ -20,6 +20,7 @@
     // 设置请求格式
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
     // 设置返回格式
+//    manager.responseSerializer = [AFJSONResponseSerializer serializer];
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     
     return manager;
@@ -45,6 +46,7 @@
                 // 请求成功
                 DebugLog(@"REQUEST SUCCESS, URL: %@", operation.request.URL);
                 if (successBlock) {
+//                    successBlock(responseObject);
                     NSDictionary *responseData = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
                     successBlock(responseData);
                 }
@@ -68,6 +70,7 @@
                 // 请求成功
                 DebugLog(@"REQUEST SUCCESS, URL: %@", operation.request.URL);
                 if (successBlock) {
+//                    successBlock(responseObject);
                     NSDictionary *responseData = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
                     successBlock(responseData);
                 }

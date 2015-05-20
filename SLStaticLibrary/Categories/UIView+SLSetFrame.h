@@ -9,6 +9,31 @@
 @interface UIView (SLSetFrame)
 
 /**
+ 位置 - 起始 x
+ **/
+@property (nonatomic, assign, readonly) CGFloat originX;
+/**
+ 位置 - 起始 y
+ **/
+@property (nonatomic, assign, readonly) CGFloat originY;
+/**
+ 位置 - 终点 x
+ **/
+@property (nonatomic, assign, readonly) CGFloat finalX;
+/**
+ 位置 - 终点 y
+ **/
+@property (nonatomic, assign, readonly) CGFloat finalY;
+/**
+ 大小 - 宽度
+ **/
+@property (nonatomic, assign, readonly) CGFloat sizeWidth;
+/**
+ 大小 - 高度
+ **/
+@property (nonatomic, assign, readonly) CGFloat sizeHeight;
+
+/**
  设置 View Frame 的 X 坐标
  @param x X 坐标
  **/
